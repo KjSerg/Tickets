@@ -1,0 +1,58 @@
+.modal {
+  display: none;
+  width: 100%;
+  max-width: 68rem;
+  padding: 5rem;
+  background-color: #18151D;
+  border-radius: 2.2rem;
+  @media (max-width: 660px) {
+    padding: 4rem 2rem;
+  }
+
+  &__text{
+    text-align: center;
+  }
+
+  &-dialog{
+    text-align: center;
+  }
+
+  .connection-list {
+    margin-top: 2.8rem;
+    justify-content: space-between;
+    @media (max-width: 450px) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__item {
+      padding: 2rem 1.4rem;
+
+      @media (max-width: 660px) {
+        padding: 1rem;
+      }
+      @media (max-width: 450px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+    color: #A7A6A8;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+    color: #FFF;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4.4rem;
+  }
+}

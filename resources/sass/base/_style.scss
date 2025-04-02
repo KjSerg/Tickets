@@ -1,0 +1,391 @@
+html {
+  font-size: 10px;
+  @media (max-width: 1700px) {
+    font-size: 9px;
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  color: #555659;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
+  &.safari * {
+  }
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main.content {
+  position: relative;
+  flex: 1;
+}
+
+a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+img:not(.pswp__img) {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.not-active {
+  pointer-events: none;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.preloader img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.preloader {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  background-color: rgba(0, 122, 255, .1);
+  opacity: 0;
+  transition: 0.1s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.preloader.active {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 20;
+}
+
+img.contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+img.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 142rem;
+  margin: 0 auto;
+
+  &--small {
+    max-width: 128.4rem;
+  }
+
+  @media (max-width: 1600px) {
+    padding: 0 1.6rem;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+.hidden {
+  display: none !important;
+}
+
+[data-link] {
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: "Inter", sans-serif;
+  color: rgba(12, 14, 18, 0.6);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
+  &::placeholder {
+    font-family: "Inter", sans-serif;
+    color: rgba(12, 14, 18, 0.40);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+}
+
+.text {
+  color: #555659;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
+  &--columns {
+    column-count: 2;
+    column-gap: 6rem;
+    @media (max-width: 768px) {
+      column-gap: 3rem;
+    }
+    @media (max-width: 600px) {
+      column-count: 1;
+    }
+  }
+
+
+  ol {
+    counter-reset: list;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 1.4rem;
+      }
+
+      list-style-type: none;
+      position: relative;
+      padding-left: 2rem;
+
+      &:before {
+        position: absolute;
+        left: 0;
+
+        counter-increment: list;
+
+        content: counter(list) ". ";
+
+        color: #E32A2F;
+      }
+    }
+  }
+
+  h6 {
+    color: #FFF;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.4rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+
+  h5 {
+    color: #FFF;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.4rem;
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      line-height: 3rem;
+    }
+  }
+
+  h4 {
+    color: #FFF;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 4rem;
+    @media (max-width: 768px) {
+      font-size: 2.6rem;
+      line-height: 3rem;
+    }
+  }
+
+  h3 {
+    color: #FFF;
+    font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 4.6rem;
+    @media (max-width: 768px) {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+  }
+
+  h2 {
+    color: #FFF;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 5rem;
+    @media (max-width: 768px) {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+  }
+
+  h1 {
+    color: #FFF;
+    font-size: 4.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 5rem;
+    @media (max-width: 768px) {
+      font-size: 3.4rem;
+      line-height: 4rem;
+    }
+  }
+
+  & > * {
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+      @media (max-width: 768px) {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  a {
+    color: #628EFF;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+      padding-left: 2.2rem;
+
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0.8rem;
+        left: 0;
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: 2px solid #DF262B;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.4rem;
+        @media (max-width: 768px) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+}
+
+input, textarea {
+  &.error {
+    border-color: red !important;
+  }
+}
+
+
+.section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 center;
+
+
+}
+
+.slider {
+  &-controls {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  &-control {
+    display: flex;
+    width: 6.2rem;
+    height: 6.2rem;
+    padding: 1.9rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #E32A2F;
+    pointer-events: auto;
+    opacity: 0.4;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:first-child:last-child {
+      margin-left: auto;
+    }
+  }
+}
+
+.slick-dots li {
+  button:before {
+    content: '';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #3B3A42;
+    border-radius: 50%;
+    opacity: 1 !important;
+    transition: 0.2s ease-in-out;
+  }
+
+  &.slick-active {
+
+    button:before {
+      width: 2rem;
+      border-radius: 10rem;
+      background: #E32A2F;
+    }
+  }
+}
