@@ -25039,7 +25039,7 @@ var burger = function burger() {
     e.preventDefault();
     var $t = $(this);
     var isActive = $t.hasClass('active');
-    var $menu = $doc.find('.header-nav');
+    var $menu = $doc.find('.header');
     if (isActive) {
       $t.removeClass('active');
       $menu.removeClass('active');

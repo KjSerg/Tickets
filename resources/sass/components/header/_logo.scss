@@ -4,6 +4,15 @@
   justify-content: center;
   flex-grow: 0;
   flex-shrink: 0;
-  width: 11rem;
-  height: 3.1rem;
+  width: 20.1rem;
+  height: 5.6rem;
+  @media (max-width: 768px) {
+    width: 16rem;
+    height: 4rem;
+    justify-content: flex-start;
+  }
+  @media (max-width: 768px) {
+    width: 12rem;
+    height: 3rem;
+  }
 }
