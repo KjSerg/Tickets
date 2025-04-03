@@ -4,16 +4,27 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 2rem 3.2rem;
-  border-radius: 1.4rem;
-  background: #E32A2F;
-  border: 1px solid  #E32A2F;
+  border-radius: 4rem;
+  padding: 1.6rem 4rem;
+  border: 1px solid #E43E59;
+  background-color: #E43E59;
   color: #FFF;
-  font-size: 1.6rem;
+  text-align: center;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  .icon{
+  line-height: 2rem;
+  letter-spacing: 0.028rem;
+  text-transform: uppercase;
+
+  &--white {
+    border: 1px solid #FFF;
+    background: #FFF;
+  }
+
+
+
+  .icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,23 +34,32 @@
     height: 2rem;
 
   }
-  svg path{
+
+  svg path {
     transition: 0.4s ease-in-out;
     fill: #fff;
   }
-  &--dark{
-    background: rgba(#E32A2F, 0);
-  }
-  &:hover{
+
+  &:hover {
     background: #FFF;
-    color: #E32A2F;
-    svg path{
+    color: #E43E59;
+
+    svg path {
       fill: #E32A2F;
+    }
+  }
+  &--transparent {
+    background-color: rgba(#fff, 0);
+    border: 1px solid #E43E59;
+    color: #E43E59;
+    &:hover {
+      background-color: rgba(#E43E59, 1);
+      color: #fff;
     }
   }
 }
 
-.copy-button{
+.copy-button {
   display: flex;
   width: 2rem;
   height: 2rem;
@@ -49,6 +69,6 @@
   flex-shrink: 0;
 }
 
-.selectric .button{
+.selectric .button {
   border: none;
 }
