@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 10;
 
   &-mobile {
     display: none;
@@ -9,6 +10,8 @@
     padding: 1.6rem;
     background: #fff;
     @media (max-width: 992px) {
+      position: absolute;
+      width: 100%;
       transition: 0.4s ease-in-out;
       transition-delay: 0.1s;
       display: flex;
@@ -98,10 +101,20 @@
   &-bottom {
     background: #E43E59;
     @media (max-width: 768px) {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: calc(100% + 8rem);
       transition: 0.4s ease-in-out;
       transform: translateY(1rem);
       pointer-events: none;
       opacity: 0;
+    }
+    @media (max-width: 550px) {
+      top: calc(100% + 13rem);
+    }
+    @media (max-width:450px) {
+      top: calc(100% + 21rem);
     }
 
     &-container {

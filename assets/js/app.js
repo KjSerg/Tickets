@@ -34871,92 +34871,18 @@ var Slick = /*#__PURE__*/function () {
   return _createClass(Slick, [{
     key: "init",
     value: function init() {
-      this.reviewSliderInit();
-      this.gallerySliderInit();
-      this.recommendationsSliderInit();
+      this.mainSliderInit();
     }
   }, {
-    key: "reviewSliderInit",
-    value: function reviewSliderInit() {
-      $(document).find('.reviews-slider').each(function () {
-        var $slider = $(this);
-        var $prev = $(this).closest('section').find('.slick__prev');
-        var $next = $(this).closest('section').find('.slick__next');
-        $slider.slick({
-          slidesToShow: 3,
-          arrows: true,
-          prevArrow: $prev,
-          nextArrow: $next,
-          dots: true,
-          responsive: [{
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 2
-            }
-          }, {
-            breakpoint: 601,
-            settings: {
-              slidesToShow: 1
-            }
-          }]
-        });
-      });
-      $(document).find('.review-car-slider').each(function () {
-        var $slider = $(this);
-        var $prev = $(this).closest('section').find('.slick__prev');
-        var $next = $(this).closest('section').find('.slick__next');
-        $slider.slick({
-          slidesToShow: 1,
-          arrows: true,
-          prevArrow: $prev,
-          nextArrow: $next,
-          dots: false
-        });
-      });
-    }
-  }, {
-    key: "recommendationsSliderInit",
-    value: function recommendationsSliderInit() {
-      $(document).find('.recommendations-slider').each(function () {
-        var $slider = $(this);
-        var $prev = $(this).closest('section').find('.slick__prev');
-        var $next = $(this).closest('section').find('.slick__next');
-        if ($slider.find('> *').length < 4) {
-          $prev.remove();
-          $next.remove();
-          return;
-        }
-        $slider.slick({
-          slidesToShow: 3,
-          arrows: true,
-          prevArrow: $prev,
-          nextArrow: $next,
-          dots: true,
-          responsive: [{
-            breakpoint: 1025,
-            settings: {
-              slidesToShow: 2
-            }
-          }, {
-            breakpoint: 601,
-            settings: {
-              slidesToShow: 1
-            }
-          }]
-        });
-      });
-    }
-  }, {
-    key: "gallerySliderInit",
-    value: function gallerySliderInit() {
-      $(document).find('.single-gallery').each(function () {
+    key: "mainSliderInit",
+    value: function mainSliderInit() {
+      $(document).find('.main-slider').each(function () {
         var $slider = $(this);
         var $section = $slider.closest('section');
         var $prev = $section.find('.slick__prev');
         var $next = $section.find('.slick__next');
-        var $preview = $section.find('.single-gallery-preview');
+        var $preview = $section.find('.main-slider-preview');
         var param = {
-          lazyLoad: 'ondemand',
           slidesToShow: 1,
           arrows: true,
           prevArrow: $prev,
@@ -34965,8 +34891,7 @@ var Slick = /*#__PURE__*/function () {
         };
         if ($preview.length > 0) {
           $preview.slick({
-            lazyLoad: 'ondemand',
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
             asNavFor: $slider,
             dots: false,
@@ -34974,9 +34899,19 @@ var Slick = /*#__PURE__*/function () {
             focusOnSelect: true,
             arrows: false,
             responsive: [{
-              breakpoint: 601,
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 4
+              }
+            }, {
+              breakpoint: 769,
               settings: {
                 slidesToShow: 3
+              }
+            }, {
+              breakpoint: 601,
+              settings: {
+                slidesToShow: 2
               }
             }]
           });
