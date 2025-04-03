@@ -402,4 +402,11 @@ input, textarea {
   font-weight: 700;
   line-height: 6.4rem;
   text-transform: uppercase;
+  @media (max-width: 450px) {
+
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 5rem;
+  }
 }
