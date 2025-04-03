@@ -44,6 +44,23 @@
       max-width: 33.8rem;
     }
   }
+
+  &-filter{
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ECE0E2;
+    .header-controls-item{
+      border-radius: 0;
+      input{
+        background-color: rgba(#fff, 0);
+      }
+      &:hover{
+        background-color: rgba(#ECE0E2, 0.6);
+        border-color: rgba(#fff, 0);
+      }
+    }
+  }
 }
 
 .event {
@@ -276,3 +293,4 @@
     }
   }
 }
+

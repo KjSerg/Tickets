@@ -63,9 +63,6 @@ export const dropdownCustom = () => {
             if (elH + (triggerHeight + triggerPositionTop) > windowH) {
                 position.top = triggerPositionTop - elH;
             }
-            if(windowW < 400){
-                // position.left = 10;
-            }
             $elem.css(position);
             $t.addClass('active');
             $elem.addClass(cls);

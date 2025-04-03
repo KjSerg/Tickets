@@ -1,0 +1,36 @@
+.breadcrumbs{
+  &-section{
+    padding-top: 4rem;
+    & + .section{
+      padding-top: 6rem;
+    }
+  }
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color:  #0C0E12;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem;
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(12, 14, 18, 0.40);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    span{
+      display: block;
+      padding: 0 1.6rem;
+      color:  #E43E59;
+      @media (max-width: 450px) {
+        padding: 0 0.6rem;
+      }
+    }
+  }
+}

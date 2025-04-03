@@ -33758,7 +33758,7 @@ var Application = /*#__PURE__*/function () {
     key: "linkListener",
     value: function linkListener() {
       var t = this;
-      this.$doc.on('click', 'a[href*="#"]:not(.fancybox, .book-form__trigger)', function (e) {
+      this.$doc.on('click', 'a[href*="#"]:not(.fancybox, .dropdown-trigger)', function (e) {
         e.preventDefault();
         var $t = $(this);
         var href = $t.attr('href');
@@ -34652,9 +34652,6 @@ var dropdownCustom = function dropdownCustom() {
       }
       if (elH + (triggerHeight + triggerPositionTop) > windowH) {
         position.top = triggerPositionTop - elH;
-      }
-      if (windowW < 400) {
-        // position.left = 10;
       }
       $elem.css(position);
       $t.addClass('active');

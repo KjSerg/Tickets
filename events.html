@@ -1,0 +1,673 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33TicketsGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <form class="header-search">
+                <button type="submit" class="header-search__icon">
+                    <img src="img/search.svg" alt="">
+                </button>
+                <label>
+                    <input type="text" name="s" placeholder="Search">
+                </label>
+            </form>
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
+                    <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                    <span class="header-controls-item__text">Ukraine</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                    <span class="header-controls-item__text">En</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+            </form>
+            <a href="#" class="header__button">
+                Add Event
+            </a>
+            <a href="#" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-container">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">Concert</a></li>
+                        <li><a href="#">Theater</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Tour</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-login">
+                    <span class="header-login__icon"><img src="img/login.svg" alt=""></span>
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile">
+        <form class="header-search">
+            <button type="submit" class="header-search__icon">
+                <img src="img/search.svg" alt="">
+            </button>
+            <label>
+                <input type="text" name="s" placeholder="Search">
+            </label>
+        </form>
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
+                <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                <span class="header-controls-item__text">Ukraine</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                <span class="header-controls-item__text">En</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+        </form>
+    </div>
+    <div class="location-dropdown custom-dropdown" id="location-dropdown">
+        <label class="location-dropdown-search">
+            <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+            <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+                   data-selector="#tips-list">
+        </label>
+        <ul id="tips-list">
+            <li><a href="#">Kyiv</a></li>
+            <li><a href="#">Odesa</a></li>
+            <li><a href="#">Dnipro</a></li>
+            <li><a href="#">Lviv</a></li>
+            <li><a href="#">Kharkiv</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+        </ul>
+    </div>
+    <div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+        <ul>
+            <li><a href="#">Ukrainian</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">French</a></li>
+            <li><a href="#">German</a></li>
+        </ul>
+    </div>
+</header>
+<main class="content">
+    <section class="breadcrumbs-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="#">Home <span>/</span></a>
+                <span>Events</span>
+            </div>
+        </div>
+    </section>
+    <section class="section events-section">
+        <div class="container">
+            <div class="events-section-container">
+                <div class="title events__title">
+                    <h1>Events</h1>
+                </div>
+                <form class="events-filter">
+                    <label class="header-controls-item">
+                        <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                        <input type="text" placeholder="Date" readonly class="datepicker">
+                        <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                    </label>
+                    <a href="#location-dropdown-filter" class="header-controls-item dropdown-trigger">
+                        <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                        <span class="header-controls-item__text">Ukraine</span>
+                        <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                    </a>
+                    <div class="location-dropdown custom-dropdown" id="location-dropdown-filter">
+                        <label class="location-dropdown-search">
+                            <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+                            <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+                                   data-selector="#tips-list-filter">
+                        </label>
+                        <ul id="tips-list-filter">
+                            <li><a href="#">Kyiv</a></li>
+                            <li><a href="#">Odesa</a></li>
+                            <li><a href="#">Dnipro</a></li>
+                            <li><a href="#">Lviv</a></li>
+                            <li><a href="#">Kharkiv</a></li>
+                            <li><a href="#">Khmelnytskiy</a></li>
+                            <li><a href="#">Khmelnytskiy</a></li>
+                            <li><a href="#">Khmelnytskiy</a></li>
+                            <li><a href="#">Khmelnytskiy</a></li>
+                        </ul>
+                    </div>
+                </form>
+                <div class="events">
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “Palace of Sports”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “Palace of Sports”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event1image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Creative evening "Coppelia"
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        12 April | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “October Residence”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Creative evening "Coppelia"</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    12 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “October Residence”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    23$
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “Palace of Sports”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “Palace of Sports”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event1image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Creative evening "Coppelia"
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        12 April | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “October Residence”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Creative evening "Coppelia"</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    12 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “October Residence”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    23$
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event1image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Creative evening "Coppelia"
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        12 April | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “October Residence”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Creative evening "Coppelia"</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    12 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “October Residence”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    23$
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div class="events-controls">
+                    <a href="#" class="button button--transparent load-more">
+                        Show more
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo logo--text footer__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Home </a></li>
+                    <li><a href="#">events</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <ul class="footer-contacts">
+                <li><a href="tel:+4 851 63 14151"><span class="icon"><img src="img/call.svg" alt=""></span>+4 851 63 14151</a></li>
+                <li><a href="mailto:test@test.test"><span class="icon"><img src="img/mail.svg" alt=""></span>Write to us</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © tickets.com 2023
+            </div>
+            <ul class="social-networks">
+                <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script>
+    var adminAjax = '';
+</script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
