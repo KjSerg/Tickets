@@ -173,6 +173,11 @@
           height: 100%;
           background: linear-gradient(180deg, rgba(12, 14, 18, 0.00) 0%, #0C0E12 100%);
         }
+        &.red-gradient{
+          &:after{
+            background: linear-gradient(180deg, rgba(228, 62, 89, 0.00) 0%, #E43E59 100%);
+          }
+        }
         &__title{
           position: relative;
           z-index: 1;
