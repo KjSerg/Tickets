@@ -15,8 +15,8 @@
 <header class="header">
     <div class="container">
         <div class="header-top">
-            <a href="#" class="logo header__logo">
-                <img src="img/logo.svg" alt="">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets<span>go</span>
             </a>
             <form class="header-search">
                 <button type="submit" class="header-search__icon">
@@ -26,23 +26,24 @@
                     <input type="text" name="s" placeholder="Search">
                 </label>
             </form>
-            <div class="header-controls">
-                <a href="#" class="header-controls-item">
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
                     <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
-                    <span class="header-controls-item__text">Date</span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
                     <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
-                </a>
-                <a href="#" class="header-controls-item">
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
                     <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
                     <span class="header-controls-item__text">Ukraine</span>
                     <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
                 </a>
-                <a href="#" class="header-controls-item">
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
                     <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
                     <span class="header-controls-item__text">En</span>
                     <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
                 </a>
-            </div>
+            </form>
             <a href="#" class="header__button">
                 Add Event
             </a>
@@ -83,28 +84,68 @@
                 <input type="text" name="s" placeholder="Search">
             </label>
         </form>
-        <div class="header-controls">
-            <a href="#" class="header-controls-item">
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
                 <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
-                <span class="header-controls-item__text">Date</span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
                 <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
-            </a>
-            <a href="#" class="header-controls-item">
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
                 <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
                 <span class="header-controls-item__text">Ukraine</span>
                 <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
             </a>
-            <a href="#" class="header-controls-item">
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
                 <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
                 <span class="header-controls-item__text">En</span>
                 <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
             </a>
-        </div>
+        </form>
+    </div>
+    <div class="location-dropdown custom-dropdown" id="location-dropdown">
+        <label class="location-dropdown-search">
+            <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+            <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+                   data-selector="#tips-list">
+        </label>
+        <ul id="tips-list">
+            <li><a href="#">Kyiv</a></li>
+            <li><a href="#">Odesa</a></li>
+            <li><a href="#">Dnipro</a></li>
+            <li><a href="#">Lviv</a></li>
+            <li><a href="#">Kharkiv</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+            <li><a href="#">Khmelnytskiy</a></li>
+        </ul>
+    </div>
+    <div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+        <ul>
+            <li><a href="#">Ukrainian</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">French</a></li>
+            <li><a href="#">German</a></li>
+        </ul>
     </div>
 </header>
 <main class="content">
+    <section class="section main-section">
+        <div class="container">
+            <div class="main-container">
+                <div class="main-slider">
+                    <div>
+                        <div class="main-slider-item">
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+
 <script>
     var adminAjax = '';
 </script>

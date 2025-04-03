@@ -6,13 +6,16 @@ import {showPassword} from "./forms/_show-password";
 import {fancyboxInit, showNotices} from "../plugins/_fancybox-init";
 import {selectrickInit} from "../plugins/_selectric-init";
 import FormHandler from "./forms/FormHandler";
-import {toggler} from "./ui/_togglers";
+import {dropdownCustom, toggler} from "./ui/_togglers";
 import {tabs} from "./ui/_tabs";
 import Slick from "../plugins/Slick";
 import {catalogFilterInit} from "./forms/_catalog-filter";
 import {copyLink} from "./ui/_copy-link";
 import {showText} from "./ui/_show-text";
 import {hoveredModel} from "./ui/_models";
+import {flatpickrInit} from "../plugins/_flatpickr-init";
+import {select2Init} from "../plugins/_select2-init";
+import {tips} from "./ui/_tips";
 
 export default class Application {
     constructor() {
@@ -60,13 +63,16 @@ export default class Application {
             accordion();
             numberInput();
             showPassword();
-            selectrickInit();
             fancyboxInit();
             tabs();
             catalogFilterInit();
             copyLink();
             showText();
             hoveredModel();
+            flatpickrInit();
+            selectrickInit();
+            tips();
+            dropdownCustom();
             this.showLoaderOnClick();
             this.linkListener();
             this.mainProductTrigger();
