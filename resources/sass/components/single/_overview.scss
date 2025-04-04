@@ -25,6 +25,9 @@
   &-container{
     display: flex;
     gap: 4rem;
+    &--reverse{
+      flex-direction: row-reverse;
+    }
     @media (max-width:1200px) {
       gap: 2rem;
     }

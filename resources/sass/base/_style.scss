@@ -293,15 +293,15 @@ input, textarea {
 
       &:before {
         display: block;
-        content: '';
+        content: '/';
         position: absolute;
-        top: 0.8rem;
+        top: 0;
         left: 0;
-        width: 1rem;
-        height: 1rem;
-        flex-shrink: 0;
-        border-radius: 50%;
-        border: 2px solid #DF262B;
+        color:#E43E59;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2rem;
       }
 
       &:not(:last-child) {
