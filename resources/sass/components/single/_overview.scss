@@ -1,0 +1,81 @@
+.overview{
+  &-artists{
+    color: #555659;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    a{
+      color: #555659;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+    &__title{
+      margin-bottom: 2.4rem;
+      color:  #0C0E12;
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3rem;
+      text-transform: uppercase;
+    }
+  }
+  &-container{
+    display: flex;
+    gap: 4rem;
+    @media (max-width:1200px) {
+      gap: 2rem;
+    }
+    @media (max-width:1023px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__text{
+    strong{
+      color:  #555659;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+  }
+  &__image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 68.8rem;
+    height: 68.8rem;
+    @media (max-width:1024px) {
+      width: 50rem;
+      height: 50rem;
+    }
+    @media (max-width:1023px) {
+      width: 100%;
+      max-width: 68.8rem;
+      height: 68.8rem;
+    }
+    @media (max-width:450px) {
+      height: 40rem;
+    }
+  }
+  &-section{
+    padding: 4rem 0;
+    @media (max-width:768px){
+      padding: 2rem 0;
+    }
+  }
+
+  &-text {
+    & > *:not(:last-child){
+      margin-bottom: 4rem;
+      @media (max-width:1200px) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

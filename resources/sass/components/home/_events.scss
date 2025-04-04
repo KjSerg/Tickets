@@ -417,16 +417,14 @@
     position: static;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 2rem 8rem;
     transition: 0.2s ease-in-out;
     will-change: transform;
 
     @media (max-width: 1200px) {
-      padding: 1rem;
+      padding: 1rem 1rem 8rem;
     }
-    @media (max-width: 1023px) {
-      padding-bottom: 8rem;
-    }
+    
 
     &__title {
       display: block;
@@ -445,15 +443,16 @@
     }
 
     & + .event__button {
-      display: none;
-      @media (max-width: 1023px) {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        width: calc(100% - 2rem);
-        display: flex;
-        background-color: #E43E59;
-        color: #fff;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      width: calc(100% - 2rem);
+      display: flex;
+      background-color: #E43E59;
+      color: #fff;
+      &:hover{
+        background-color: #fff;
+        color: #E43E59;
       }
     }
   }

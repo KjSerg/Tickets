@@ -59,16 +59,22 @@
   }
 }
 
-.copy-button {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
 
 .selectric .button {
   border: none;
+}
+
+.circle-button{
+  display: flex;
+  width: 5.2rem;
+  height: 5.2rem;
+  padding: 1.4rem;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;border-radius: 50%;
+  background: rgba(12, 14, 18, 0.10);
+  &:hover{
+    background: #E43E59;
+  }
 }

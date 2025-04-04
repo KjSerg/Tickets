@@ -1,0 +1,725 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33TicketsGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <form class="header-search">
+                <button type="submit" class="header-search__icon">
+                    <img src="img/search.svg" alt="">
+                </button>
+                <label>
+                    <input type="text" name="s" placeholder="Search">
+                </label>
+            </form>
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
+                    <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                    <span class="header-controls-item__text">Ukraine</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                    <span class="header-controls-item__text">En</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+            </form>
+            <a href="#" class="header__button">
+                Add Event
+            </a>
+            <a href="#" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-container">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">Concert</a></li>
+                        <li><a href="#">Theater</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Tour</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-login">
+                    <span class="header-login__icon"><img src="img/login.svg" alt=""></span>
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile">
+        <form class="header-search">
+            <button type="submit" class="header-search__icon">
+                <img src="img/search.svg" alt="">
+            </button>
+            <label>
+                <input type="text" name="s" placeholder="Search">
+            </label>
+        </form>
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
+                <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                <span class="header-controls-item__text">Ukraine</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                <span class="header-controls-item__text">En</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+        </form>
+    </div>
+</header>
+<main class="content">
+    <section class="breadcrumbs-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="#">Home
+                    <span>/</span>
+                </a>
+                <a href="#">Events
+                    <span>/</span>
+                </a>
+                <span>Artem Pivovarov</span>
+            </div>
+        </div>
+    </section>
+    <section class="section details-section">
+        <div class="container">
+            <div class="details-container">
+                <div class="details__title details__title--mobile">
+                    Artem Pivovarov solo concert
+                </div>
+                <div class="details__image">
+                    <img src="img/Event-image.jpg" class="cover" alt="">
+                </div>
+                <div class="details-content">
+                    <div class="details__title">
+                        <h1>Artem Pivovarov solo concert</h1>
+                    </div>
+                    <ul class="details-information">
+                        <li class="details-information__item">
+                            <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                            7 April | 19:00 th
+                        </li>
+                        <li class="details-information__item">
+                            <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                            “Palace of Sports” <br>
+                            Kyiv, Sportyvna Square, 1
+                        </li>
+                        <li class="details-information__item">
+                            <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                            20$ - 50$
+                        </li>
+                    </ul>
+                    <div class="details-controls">
+                        <a href="#" class="button details__button">
+                            Buy tickets
+                        </a>
+                        <a href="#" class="copy-link details-copy-link circle-button">
+                            <img src="img/sheare.svg" alt="">
+                        </a>
+                        <a href="#" class="details-add-to-favorites circle-button active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none">
+  <g clip-path="url(#clip0_244_3963)">
+    <path d="M17.0625 1.5C16.1133 1.5011 15.1744 1.69666 14.3037 2.0746C13.433 2.45255 12.649 3.00487 12 3.6975C11.0489 2.68242 9.8146 1.97669 8.45735 1.67195C7.1001 1.3672 5.68258 1.47751 4.38881 1.98854C3.09504 2.49958 1.98478 3.38775 1.20215 4.53775C0.419527 5.68775 0.000684862 7.04646 0 8.4375C0 15.345 11.1412 22.125 11.625 22.3913C11.7416 22.4613 11.8752 22.4984 12.0112 22.4984C12.1473 22.4984 12.2809 22.4613 12.3975 22.3913C12.8588 22.125 24 15.345 24 8.4375C23.998 6.59817 23.2665 4.83474 21.9659 3.53414C20.6653 2.23354 18.9018 1.50199 17.0625 1.5ZM12 20.865C10.0612 19.6275 1.5 13.845 1.5 8.4375C1.50096 7.28248 1.86969 6.15777 2.55276 5.22637C3.23582 4.29498 4.19772 3.60528 5.29906 3.25725C6.4004 2.90922 7.58395 2.92093 8.67819 3.29068C9.77243 3.66043 10.7205 4.36902 11.385 5.31375C11.4542 5.41202 11.5461 5.49221 11.6528 5.54756C11.7595 5.60291 11.8779 5.6318 11.9981 5.6318C12.1183 5.6318 12.2368 5.60291 12.3435 5.54756C12.4502 5.49221 12.542 5.41202 12.6112 5.31375C13.2752 4.3674 14.2235 3.65728 15.3184 3.28648C16.4134 2.91569 17.598 2.90352 18.7004 3.25174C19.8027 3.59996 20.7654 4.29044 21.4486 5.22295C22.1319 6.15546 22.5002 7.28147 22.5 8.4375C22.5 13.8413 13.9388 19.6238 12 20.865Z"
+          fill="#E43E59"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_244_3963">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="section overview-section">
+        <div class="container">
+            <div class="overview-container">
+                <div class="overview-text">
+                    <div class="border-box">
+                        <div class="text overview__text">
+                            <h6>ABOUT THE EVENT</h6>
+                            <p>
+                                We invite you to a big concert by Artem Pivovarov and his orchestra at the Palace of
+                                Sports in Kyiv!
+                            </p>
+                            <p>
+                                Last year, Artem Pivovarov presented a high-tech show at the capital's Palace of Sports,
+                                gathering three sellouts in a row. This time, the artist will play a large concert with
+                                an orchestra in the same hall, which will be the only opportunity to attend Pivovarov's
+                                full-length performance in Ukraine in 2025.
+                            </p>
+                            <p>
+                                On November 7, a unique show awaits you, which will amaze with its content and scale,
+                                high-quality music and unique atmosphere. Each viewer will be able to feel the
+                                irrepressible energy of the Pivovarov Team, be charged with positive emotions and enjoy
+                                their favorite songs accompanied by the orchestra, in particular from the new album
+                                "Your Poems, My Notes PT.2". At the concert you will hear live "Drum", "Deja Vu",
+                                "Mirage", "Thoughts", "Manifest", "There in the Poplar" and other hits.
+                            </p>
+                            <p>
+                                Artem Pyvovarov has traveled the world, popularizing Ukrainian culture in Europe, the
+                                USA and Canada. Over the past three years, the artist has played over 300 charity
+                                concerts in Ukraine and abroad, gathering full halls everywhere. Each of the
+                                performances was charitable and this concert at the Palace of Sports is no exception.
+                                Pyvovarov's team will direct the funds raised to fulfill the requests of brigades and
+                                units of the Armed Forces of Ukraine, which will help our defenders in the fight for
+                                freedom, independence and a better future for Ukraine.
+                            </p>
+                            <p>
+                                Don't miss the opportunity to feel the crazy Ukrainian drive and join a good cause!
+                            </p>
+                            <p><br></p>
+                            <p><strong>General radio partner: Hit FM</strong></p>
+                            <p><strong>Show created by: Pivovarov Production</strong></p>
+                            <p><strong>Organizer: Magicbox Association</strong></p>
+                        </div>
+                    </div>
+                    <div class="border-box">
+                        <div class="overview-artists">
+                            <div class="overview-artists__title">
+                                Artists
+                            </div>
+                            <ul>
+                                <li><a href="#">Artem Pivovarov</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview__image">
+                    <img src="img/artem.jpg" class="cover" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section similar-section section-padding">
+        <div class="container">
+            <div class="section-head">
+                <div class="similar__title title">
+                    <h6>Similar events</h6>
+                </div>
+
+                <div class="slider-controls similar-controls">
+                    <a href="#" class="slick__prev slider-control">
+                        <img src="img/arrow_back_ios(1).svg" alt="">
+                    </a>
+                    <a href="#" class="slick__next slider-control">
+                        <img src="img/arrow_back_io1s.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="similar-slider">
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event1image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Creative evening "Coppelia"
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        12 April | 19:00 th
+                                    </p>
+                                    <p>
+                                        Kyiv, “October Residence”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Creative evening "Coppelia"</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    12 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Kyiv, “October Residence”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    23$
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="event">
+                        <div class="event-main">
+                            <div class="event__image">
+                                <img src="img/Event-image.jpg" alt="">
+                            </div>
+                            <div class="event-main-content">
+                                <a href="#" class="event__favorite active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <g clip-path="url(#clip0_68_495)">
+    <path d="M39.8125 3.5C37.5977 3.50258 35.407 3.95887 33.3754 4.84074C31.3438 5.72262 29.5144 7.01136 28 8.6275C25.7808 6.25897 22.9007 4.61228 19.7338 3.90121C16.5669 3.19013 13.2594 3.44751 10.2406 4.63994C7.22177 5.83236 4.63115 7.90475 2.80502 10.5881C0.978897 13.2714 0.00159801 16.4417 0 19.6875C0 35.805 25.9963 51.625 27.125 52.2463C27.3972 52.4098 27.7087 52.4962 28.0262 52.4962C28.3438 52.4962 28.6553 52.4098 28.9275 52.2463C30.0038 51.625 56 35.805 56 19.6875C55.9954 15.3957 54.2884 11.2811 51.2537 8.24633C48.2189 5.21158 44.1043 3.50463 39.8125 3.5ZM28 48.685C23.4762 45.7975 3.5 32.305 3.5 19.6875C3.50224 16.9925 4.36262 14.3681 5.95643 12.1949C7.55024 10.0216 9.79469 8.41233 12.3645 7.60025C14.9343 6.78818 17.6959 6.8155 20.2491 7.67825C22.8023 8.54101 25.0145 10.1944 26.565 12.3988C26.7265 12.628 26.9408 12.8152 27.1898 12.9443C27.4388 13.0735 27.7151 13.1409 27.9956 13.1409C28.2761 13.1409 28.5525 13.0735 28.8015 12.9443C29.0504 12.8152 29.2647 12.628 29.4263 12.3988C30.9755 10.1906 33.1881 8.53365 35.743 7.66846C38.2979 6.80328 41.0621 6.77488 43.6342 7.58739C46.2063 8.3999 48.4526 10.011 50.0468 12.1869C51.6411 14.3627 52.5004 16.9901 52.5 19.6875C52.5 32.2963 32.5238 45.7888 28 48.685Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_68_495">
+      <rect width="56" height="56" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+                                </a>
+                                <a href="#" class="event__title">
+                                    Artem Pivovarov
+                                </a>
+                                <div class="event-description">
+                                    <p>
+                                        2 May | 19:00 th
+                                    </p>
+                                    <p>
+                                        Khmelnitskiy, “Philharmonic”
+                                    </p>
+                                </div>
+                                <a href="#" class="event__button">
+                                    Buy tickets
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <a href="#" class="event-footer__title">Artem Pivovarov</a>
+                            <ul class="event-information">
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                    7 April | 19:00 th
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                    Khmelnitskiy, “Philharmonic”
+                                </li>
+                                <li class="event-information__item">
+                                    <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                    20$ - 50$
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="event__button">
+                            Buy tickets
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo logo--text footer__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Home </a></li>
+                    <li><a href="#">events</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <ul class="footer-contacts">
+                <li><a href="tel:+4 851 63 14151">
+                    <span class="icon"><img src="img/call.svg" alt=""></span>
+                    +4 851 63 14151</a></li>
+                <li><a href="mailto:test@test.test">
+                    <span class="icon"><img src="img/mail.svg" alt=""></span>
+                    Write to us</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © tickets.com 2023
+            </div>
+            <ul class="social-networks">
+                <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="location-dropdown custom-dropdown" id="location-dropdown">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list">
+    </label>
+    <ul id="tips-list">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
+<div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+    <ul>
+        <li><a href="#">Ukrainian</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+    </ul>
+</div>
+<script>
+    var adminAjax = '';
+</script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

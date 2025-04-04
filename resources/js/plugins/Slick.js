@@ -7,6 +7,46 @@ export default class Slick {
 
     init() {
         this.mainSliderInit();
+        this.similarSliderInit();
+    }
+
+    similarSliderInit() {
+
+        $(document).find('.similar-slider').each(function () {
+            const $slider = $(this);
+            const $section = $slider.closest('section');
+            const $prev = $section.find('.slick__prev');
+            const $next = $section.find('.slick__next');
+            const param = {
+                slidesToShow: 4,
+                arrows: true,
+                prevArrow: $prev,
+                nextArrow: $next,
+                dots: false,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 1300,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 769,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 650,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                ]
+            };
+            $slider.slick(param);
+        });
     }
 
     mainSliderInit() {

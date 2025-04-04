@@ -155,7 +155,6 @@ input, textarea {
 
 .text {
   color: #555659;
-  font-family: "Inter", sans-serif;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -199,19 +198,19 @@ input, textarea {
   }
 
   h6 {
-    color: #FFF;
-    font-size: 2.2rem;
+    color: #0C0E12;
+    font-size: 2.4rem;
     font-style: normal;
-    font-weight: 500;
-    line-height: 3.4rem;
+    font-weight: 700;
+    line-height: 3rem;
+    text-transform: uppercase;
     @media (max-width: 768px) {
       font-size: 2rem;
-      line-height: 3rem;
     }
   }
 
   h5 {
-    color: #FFF;
+    color: #0C0E12;
     font-size: 2.6rem;
     font-style: normal;
     font-weight: 500;
@@ -223,7 +222,7 @@ input, textarea {
   }
 
   h4 {
-    color: #FFF;
+    color: #0C0E12;
     font-size: 3rem;
     font-style: normal;
     font-weight: 500;
@@ -235,7 +234,7 @@ input, textarea {
   }
 
   h3 {
-    color: #FFF;
+    color: #0C0E12;
     font-size: 3.6rem;
     font-style: normal;
     font-weight: 500;
@@ -247,7 +246,7 @@ input, textarea {
   }
 
   h2 {
-    color: #FFF;
+    color: #0C0E12;
     font-size: 4rem;
     font-style: normal;
     font-weight: 500;
@@ -259,7 +258,7 @@ input, textarea {
   }
 
   h1 {
-    color: #FFF;
+    color: #0C0E12;
     font-size: 4.4rem;
     font-style: normal;
     font-weight: 500;
@@ -328,6 +327,27 @@ input, textarea {
   background-size: cover;
   background-position: 0 center;
 
+  &-padding {
+    padding: 4rem 0;
+    @media (max-width: 768px) {
+      padding: 2rem 0;
+    }
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+    .title {
+      margin-bottom: 0;
+    }
+  }
 
 }
 
@@ -402,11 +422,25 @@ input, textarea {
   font-weight: 700;
   line-height: 6.4rem;
   text-transform: uppercase;
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
 
     margin-bottom: 2rem;
     font-size: 4rem;
     font-weight: 600;
     line-height: 5rem;
+  }
+  @media (max-width: 450px) {
+
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+.border-box {
+  padding: 4rem;
+  border: 1px solid #ECE0E2;
+  @media (max-width: 1200px) {
+    padding: 2rem;
   }
 }

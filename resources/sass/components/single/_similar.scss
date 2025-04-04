@@ -1,0 +1,40 @@
+.similar {
+  &-section{
+
+    @media (max-width: 768px) {
+      padding-top: 4rem;
+    }
+  }
+  &-slider{
+    display: flex;
+    .slick-slide{
+      & > *{
+        height: 100%;
+        & > *{
+          height: 100%;
+        }
+      }
+    }
+    .event{
+      height: 100%;
+      @media (max-width: 1300px) {
+        margin: auto;
+        max-width: 96%;
+      }
+      @media (max-width: 768px) {
+        margin: auto;
+        max-width: 33.8rem;
+      }
+    }
+  }
+  &-controls {
+    position: static;
+    width: 12rem;
+    @media (max-width: 767px) {
+      margin-left: auto;
+    }
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+  }
+}
