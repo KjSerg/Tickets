@@ -1,0 +1,266 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33TicketsGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <form class="header-search">
+                <button type="submit" class="header-search__icon">
+                    <img src="img/search.svg" alt="">
+                </button>
+                <label>
+                    <input type="text" name="s" placeholder="Search">
+                </label>
+            </form>
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
+                    <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                    <span class="header-controls-item__text">Ukraine</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                    <span class="header-controls-item__text">En</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+            </form>
+            <a href="#" class="header__button">
+                Add Event
+            </a>
+            <a href="#" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-container">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">Concert</a></li>
+                        <li><a href="#">Theater</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Tour</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-login">
+                    <span class="header-login__icon"><img src="img/login.svg" alt=""></span>
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile">
+        <form class="header-search">
+            <button type="submit" class="header-search__icon">
+                <img src="img/search.svg" alt="">
+            </button>
+            <label>
+                <input type="text" name="s" placeholder="Search">
+            </label>
+        </form>
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
+                <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                <span class="header-controls-item__text">Ukraine</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                <span class="header-controls-item__text">En</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+        </form>
+    </div>
+</header>
+<main class="content">
+    <section class="breadcrumbs-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="#">Home
+                    <span>/</span>
+                </a>
+                <span>Contact us</span>
+            </div>
+        </div>
+    </section>
+    <section class="section section-padding contacts-section">
+        <div class="container">
+            <div class="contacts__title title">
+                <h1>Contact us</h1>
+            </div>
+            <div class="contacts-row">
+                <div class="border-box">
+                    <div class="contacts__subtitle">contact information</div>
+                    <ul class="contacts-details">
+                        <li class="contacts-details-item">
+                            <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                            <div class="contacts-details-item__text">
+                                <strong>Address</strong>
+                                <a href="#">K Žižkovu 282/9, Vysočany (Praha 9), 190 00 Praha</a>
+                            </div>
+                        </li>
+                        <li class="contacts-details-item">
+                            <div class="icon"><img src="img/mail-red.svg" alt=""></div>
+                            <div class="contacts-details-item__text">
+                                <strong>E-mail</strong>
+                                <a href="#">example@gmail.com</a>
+                            </div>
+                        </li>
+                        <li class="contacts-details-item">
+                            <div class="icon"><img src="img/call-red.svg" alt=""></div>
+                            <div class="contacts-details-item__text">
+                                <strong>Phone</strong>
+                                <a href="#">+38 (044) 222 00 22</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="social-networks">
+                        <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                        <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                        <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                        <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="contacts__image">
+                    <img src="img/image-24.jpg" class="cover" alt="">
+                </div>
+            </div>
+            <div class="contacts-row">
+                <div class="contacts-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.24144813005!2d20.89661540595961!3d52.23309737757422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2z0JLQsNGA0YjQsNCy0LAsINCf0L7Qu9GM0YnQsA!5e0!3m2!1suk!2sua!4v1743776715665!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="border-box">
+                    <div class="contacts__subtitle">Write to us</div>
+                    <form class="contacts-form form">
+                        <label   class="form-label">
+                            <span class="form-label__head">Your name</span>
+                            <input type="text" placeholder="name">
+                        </label>
+                        <label   class="form-label">
+                            <span class="form-label__head">Phone number</span>
+                            <input type="tel" placeholder="+00 (000) 000 00 00" >
+                        </label>
+                        <label   class="form-label">
+                            <span class="form-label__head">Write a message</span>
+                            <textarea placeholder="Enter"></textarea>
+                        </label>
+                        <div class="form-consent">
+                            <label class="form-consent-box">
+                                <input type="checkbox">
+                                <span></span>
+                            </label>
+                            <div class="form-consent-text">
+                                <p>I agree to the processing of personal data and the <a href="#">Privacy Policy</a>.</p>
+                            </div>
+                        </div>
+                        <button type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo logo--text footer__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Home </a></li>
+                    <li><a href="#">events</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <ul class="footer-contacts">
+                <li><a href="tel:+4 851 63 14151">
+                    <span class="icon"><img src="img/call.svg" alt=""></span>
+                    +4 851 63 14151</a></li>
+                <li><a href="mailto:test@test.test">
+                    <span class="icon"><img src="img/mail.svg" alt=""></span>
+                    Write to us</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © tickets.com 2023
+            </div>
+            <ul class="social-networks">
+                <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="location-dropdown custom-dropdown" id="location-dropdown">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list">
+    </label>
+    <ul id="tips-list">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
+<div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+    <ul>
+        <li><a href="#">Ukrainian</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+    </ul>
+</div>
+<script>
+    var adminAjax = '';
+</script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
