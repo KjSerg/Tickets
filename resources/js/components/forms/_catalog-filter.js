@@ -13,7 +13,7 @@ export const catalogFilterInit = () => {
         const $counter = $item.find('.counter');
         const $form = $this.closest('form');
         const $box = $form.find('.catalog-filter-box');
-        const $list = $item.find('.catalog-filter-item-list');
+        const $list = $item.find('.events-filter-dropdown');
         const $inputs = $list.find('input');
         let $res = $box.find(`input[name="${name}"]`);
         let values = [];
@@ -36,14 +36,14 @@ export const catalogFilterInit = () => {
         $res.val(values.join(','));
         if ($this.hasClass('trigger-submit-on-change')) $form.trigger('submit');
     });
-    $(document).on('click', '.catalog-filter-item__head', function (e) {
+    $(document).on('click', '.events-filter-item__head', function (e) {
         e.preventDefault();
         const $t = $(this);
-        const $item = $t.closest('.catalog-filter-item');
+        const $item = $t.closest('.events-filter-item');
         if ($item.hasClass('active')) {
             $item.removeClass('active');
         } else {
-            $(document).find('.catalog-filter-item').removeClass('active');
+            $(document).find('.events-filter-item').removeClass('active');
             $item.addClass('active');
         }
 

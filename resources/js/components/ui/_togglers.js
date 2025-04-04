@@ -25,6 +25,7 @@ export const toggler = () => {
             }
         }
     });
+
 }
 export const dropdownCustom = () => {
     const $doc = $(document);
@@ -64,12 +65,18 @@ export const dropdownCustom = () => {
                 position.top = triggerPositionTop - elH;
             }
             $elem.css(position);
+
+            closeDropdowns(cls);
+
             $t.addClass('active');
             $elem.addClass(cls);
         }
     });
-    $(window).on('scroll resize', function () {
-        $doc.find('.custom-dropdown').removeClass('active');
-        $doc.find('.dropdown-trigger').removeClass('active');
-    });
+    $(window).on('resize', closeDropdowns);
+}
+
+export const closeDropdowns = (cls = 'active') => {
+    const $doc = $(document);
+    $doc.find('.dropdown-trigger').removeClass('active');
+    $doc.find('.custom-dropdown').removeClass(cls);
 }

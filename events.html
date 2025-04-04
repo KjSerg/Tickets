@@ -104,32 +104,6 @@
             </a>
         </form>
     </div>
-    <div class="location-dropdown custom-dropdown" id="location-dropdown">
-        <label class="location-dropdown-search">
-            <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
-            <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
-                   data-selector="#tips-list">
-        </label>
-        <ul id="tips-list">
-            <li><a href="#">Kyiv</a></li>
-            <li><a href="#">Odesa</a></li>
-            <li><a href="#">Dnipro</a></li>
-            <li><a href="#">Lviv</a></li>
-            <li><a href="#">Kharkiv</a></li>
-            <li><a href="#">Khmelnytskiy</a></li>
-            <li><a href="#">Khmelnytskiy</a></li>
-            <li><a href="#">Khmelnytskiy</a></li>
-            <li><a href="#">Khmelnytskiy</a></li>
-        </ul>
-    </div>
-    <div class="languages-dropdown custom-dropdown" id="languages-dropdown">
-        <ul>
-            <li><a href="#">Ukrainian</a></li>
-            <li><a href="#">English</a></li>
-            <li><a href="#">French</a></li>
-            <li><a href="#">German</a></li>
-        </ul>
-    </div>
 </header>
 <main class="content">
     <section class="breadcrumbs-section">
@@ -147,33 +121,92 @@
                     <h1>Events</h1>
                 </div>
                 <form class="events-filter">
+                    <div class="catalog-filter-box" style="display:none;"></div>
                     <label class="header-controls-item">
                         <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
                         <input type="text" placeholder="Date" readonly class="datepicker">
                         <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
                     </label>
-                    <a href="#location-dropdown-filter" class="header-controls-item dropdown-trigger">
-                        <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
-                        <span class="header-controls-item__text">Ukraine</span>
-                        <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
-                    </a>
-                    <div class="location-dropdown custom-dropdown" id="location-dropdown-filter">
-                        <label class="location-dropdown-search">
-                            <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
-                            <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
-                                   data-selector="#tips-list-filter">
-                        </label>
-                        <ul id="tips-list-filter">
-                            <li><a href="#">Kyiv</a></li>
-                            <li><a href="#">Odesa</a></li>
-                            <li><a href="#">Dnipro</a></li>
-                            <li><a href="#">Lviv</a></li>
-                            <li><a href="#">Kharkiv</a></li>
-                            <li><a href="#">Khmelnytskiy</a></li>
-                            <li><a href="#">Khmelnytskiy</a></li>
-                            <li><a href="#">Khmelnytskiy</a></li>
-                            <li><a href="#">Khmelnytskiy</a></li>
-                        </ul>
+                    <div class="events-filter-item catalog-filter-item">
+                        <a href="#" class="events-filter-item__head ">
+                            <span class="icon"><img src="img/location_on.svg" alt=""></span>
+                            <span class="txt">Ukraine</span>
+                            <span class="arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                        </a>
+                        <div class="events-filter-dropdown" >
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="location" value="Kyiv">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Kyiv
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="location" value="Odesa">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Odesa
+                            </label>
+                        </div>
+                    </div>
+                    <div class="events-filter-item catalog-filter-item">
+                        <a href="#" class="events-filter-item__head ">
+                            <span class="icon"><img src="img/headphones.svg" alt=""></span>
+                            <span class="txt">Style</span>
+                            <span class="arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                        </a>
+                        <div class="events-filter-dropdown" >
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Concert">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Concert
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Theater">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Theater
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Sport">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Sport
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Festival">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Festival
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Business">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Business
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Comedy">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Comedy
+                            </label>
+                            <label class="events-filter-dropdown__label">
+                                <input type="checkbox" class="trigger-submit-on-change2" data-name="Style" value="Tour">
+                                <span class="icon"><img src="img/checkbox.svg" alt=""></span>
+                                Tour
+                            </label>
+                        </div>
+                    </div>
+                    <div class="events-filter-item catalog-filter-item">
+                        <a href="#" class="events-filter-item__head ">
+                            <span class="icon"><img src="img/attach_money.svg" alt=""></span>
+                            <span class="txt">Price</span>
+                            <span class="arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                        </a>
+                        <div class="events-filter-dropdown" >
+                            <label class="events-filter__label">
+                                <input type="text" class="number-input" placeholder="min">
+                            </label>
+                            <label class="events-filter__label">
+                                <input type="text" class="number-input" placeholder="max">
+                            </label>
+                            <button type="submit" class="events-filter-dropdown__button">
+                                apply
+                            </button>
+                        </div>
                     </div>
                 </form>
                 <div class="events">
@@ -665,6 +698,50 @@
         </div>
     </div>
 </footer>
+<div class="location-dropdown custom-dropdown" id="location-dropdown">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list">
+    </label>
+    <ul id="tips-list">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
+<div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+    <ul>
+        <li><a href="#">Ukrainian</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+    </ul>
+</div>
+<div class="location-dropdown custom-dropdown" id="location-dropdown-filter">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list-filter">
+    </label>
+    <ul id="tips-list-filter">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
 <script>
     var adminAjax = '';
 </script>

@@ -20,7 +20,7 @@
     }
   }
 
-  &-controls{
+  &-controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,19 +45,183 @@
     }
   }
 
-  &-filter{
+  &-filter {
+    position: relative;
     margin-bottom: 3rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid #ECE0E2;
-    .header-controls-item{
+    @media (max-width:375px) {
+      flex-direction: column;
+    }
+    &__label {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      input {
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+    }
+
+    .header-controls-item {
       border-radius: 0;
-      input{
+      @media (max-width:450px) {
+        width: 50%;
+      }
+      @media (max-width:375px) {
+        width: 100%;
+      }
+      input {
         background-color: rgba(#fff, 0);
       }
-      &:hover{
+
+      &:hover {
         background-color: rgba(#ECE0E2, 0.6);
         border-color: rgba(#fff, 0);
+      }
+    }
+
+    &-dropdown {
+      position: absolute;
+      z-index: 10;
+      width: 16rem;
+      height: fit-content;
+      max-height: 30rem;
+      overflow: auto;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid #ECE0E2;
+      background: #FFF;
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+      transition: 0.4s ease-in-out;
+      transition-property: opacity, transform;
+      transform: translateY(-1rem);
+      opacity: 0;
+      pointer-events: none;
+
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid #E43E59;
+        background: #E43E59;
+        color: #FFF;
+        text-align: center;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+        letter-spacing: 0.028rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover{
+
+          background: #fff;
+          color: #E43E59;
+        }
+      }
+
+      &__label {
+        display: flex;
+        gap: 0.8rem;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        .icon {
+          border-radius: 6px;
+          overflow: hidden;
+          border: 1px solid #E43E59;
+
+          img, svg {
+            opacity: 0;
+            transition: 0.4s ease-in-out;
+          }
+        }
+
+        input {
+          display: none;
+
+          &:checked + .icon {
+            border-color: rgba(#E43E59, 0);
+
+            img, svg {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &-item {
+      position: relative;
+      color: #0C0E12;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2rem;
+      @media (max-width:450px) {
+        width: 50%;
+      }
+      @media (max-width:375px) {
+        width: 100%;
+      }
+      .icon, .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        transition: 0.4s ease-in-out;
+      }
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &__head {
+        padding: 1.6rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        cursor: pointer;
+        border: 1px solid #fff;
+        @media (max-width:1200px) {
+          gap: .6rem;
+          padding: 1rem;
+        }
+        @media (max-width:450px) {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        &:hover {
+          background-color: rgba(#ECE0E2, 0.6);
+          border-color: rgba(#fff, 0);
+        }
+      }
+
+      &.active {
+        .arrow {
+          transform: rotate(180deg);
+        }
+
+        .events-filter-dropdown {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
       }
     }
   }
@@ -75,6 +239,7 @@
   @media (max-width: 1023px) {
     padding-top: 0;
   }
+
   &__button {
     width: 100%;
     padding: 1.6rem;
@@ -279,7 +444,7 @@
       }
     }
 
-    & + .event__button{
+    & + .event__button {
       display: none;
       @media (max-width: 1023px) {
         position: absolute;

@@ -1,8 +1,14 @@
 .breadcrumbs{
   &-section{
     padding-top: 4rem;
+    @media (max-width:450px) {
+      padding-top: 2rem;
+    }
     & + .section{
       padding-top: 6rem;
+      @media (max-width:450px) {
+        padding-top: 3rem;
+      }
     }
   }
   width: 100%;

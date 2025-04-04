@@ -34113,7 +34113,7 @@ var catalogFilterInit = function catalogFilterInit() {
     var $counter = $item.find('.counter');
     var $form = $this.closest('form');
     var $box = $form.find('.catalog-filter-box');
-    var $list = $item.find('.catalog-filter-item-list');
+    var $list = $item.find('.events-filter-dropdown');
     var $inputs = $list.find('input');
     var $res = $box.find("input[name=\"".concat(name, "\"]"));
     var values = [];
@@ -34136,14 +34136,14 @@ var catalogFilterInit = function catalogFilterInit() {
     $res.val(values.join(','));
     if ($this.hasClass('trigger-submit-on-change')) $form.trigger('submit');
   });
-  $(document).on('click', '.catalog-filter-item__head', function (e) {
+  $(document).on('click', '.events-filter-item__head', function (e) {
     e.preventDefault();
     var $t = $(this);
-    var $item = $t.closest('.catalog-filter-item');
+    var $item = $t.closest('.events-filter-item');
     if ($item.hasClass('active')) {
       $item.removeClass('active');
     } else {
-      $(document).find('.catalog-filter-item').removeClass('active');
+      $(document).find('.events-filter-item').removeClass('active');
       $item.addClass('active');
     }
   });
@@ -34373,7 +34373,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   burger: () => (/* binding */ burger)
 /* harmony export */ });
+/* harmony import */ var _togglers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_togglers */ "./resources/js/components/ui/_togglers.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 var burger = function burger() {
   var $doc = $(document);
   $doc.on('click', '.burger', function (e) {
@@ -34381,6 +34383,7 @@ var burger = function burger() {
     var $t = $(this);
     var isActive = $t.hasClass('active');
     var $menu = $doc.find('.header');
+    (0,_togglers__WEBPACK_IMPORTED_MODULE_0__.closeDropdowns)();
     if (isActive) {
       $t.removeClass('active');
       $menu.removeClass('active');
@@ -34586,6 +34589,7 @@ var tips = function tips() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeDropdowns: () => (/* binding */ closeDropdowns),
 /* harmony export */   dropdownCustom: () => (/* binding */ dropdownCustom),
 /* harmony export */   toggler: () => (/* binding */ toggler)
 /* harmony export */ });
@@ -34654,14 +34658,18 @@ var dropdownCustom = function dropdownCustom() {
         position.top = triggerPositionTop - elH;
       }
       $elem.css(position);
+      closeDropdowns(cls);
       $t.addClass('active');
       $elem.addClass(cls);
     }
   });
-  $(window).on('scroll resize', function () {
-    $doc.find('.custom-dropdown').removeClass('active');
-    $doc.find('.dropdown-trigger').removeClass('active');
-  });
+  $(window).on('resize', closeDropdowns);
+};
+var closeDropdowns = function closeDropdowns() {
+  var cls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'active';
+  var $doc = $(document);
+  $doc.find('.dropdown-trigger').removeClass('active');
+  $doc.find('.custom-dropdown').removeClass(cls);
 };
 
 /***/ }),
