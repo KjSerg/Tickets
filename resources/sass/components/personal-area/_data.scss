@@ -1,0 +1,20 @@
+.personal-area {
+  &-form {
+    .form {
+      &:not(:last-child){
+        margin-bottom: 4rem;
+      }
+      gap: 2.4rem 1rem;
+    }
+
+    &__title {
+      margin-bottom: 2.4rem;
+      color: #0C0E12;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2.6rem;
+      text-transform: uppercase;
+    }
+  }
+}

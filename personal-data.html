@@ -1,0 +1,257 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33TicketsGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css"/>
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <form class="header-search">
+                <button type="submit" class="header-search__icon">
+                    <img src="img/search.svg" alt="">
+                </button>
+                <label>
+                    <input type="text" name="s" placeholder="Search">
+                </label>
+            </form>
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
+                    <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                    <span class="header-controls-item__text">Ukraine</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                    <span class="header-controls-item__text">En</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+            </form>
+            <a href="#" class="header__button">
+                Add Event
+            </a>
+            <a href="#" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-container">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">Concert</a></li>
+                        <li><a href="#">Theater</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Tour</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-login">
+                    <span class="header-login__icon"><img src="img/login.svg" alt=""></span>
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile">
+        <form class="header-search">
+            <button type="submit" class="header-search__icon">
+                <img src="img/search.svg" alt="">
+            </button>
+            <label>
+                <input type="text" name="s" placeholder="Search">
+            </label>
+        </form>
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
+                <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                <span class="header-controls-item__text">Ukraine</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                <span class="header-controls-item__text">En</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+        </form>
+    </div>
+</header>
+<main class="content">
+    <section class="personal-area-section section ">
+        <div class="container">
+            <div class="personal-area-head">
+                <a href="#" class="personal-area-head__item active">Personal data</a>
+                <a href="#" class="personal-area-head__item ">My orders</a>
+                <a href="#" class="personal-area-head__item ">My preferences</a>
+                <a href="#" class="personal-area-head__item ">Bonus account</a>
+            </div>
+            <div class="personal-area-data">
+                <div class="title personal-area__title">
+                    <h1>Personal data</h1>
+                </div>
+                <form class="personal-area-form border-box">
+
+                    <div class="personal-area-form__title">Contacts</div>
+                    <div class="form">
+                        <label class="form-label half">
+                            <span class="form-label__head">Your name</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Last name</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Email</span>
+                            <input type="email" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Phone</span>
+                            <input type="tel" placeholder="Enter">
+                        </label>
+                    </div>
+
+                    <div class="personal-area-form__title">Address details</div>
+                    <div class="form">
+                        <label class="form-label half">
+                            <span class="form-label__head">Country</span>
+                            <select class="select">
+                                <option value="">Deutschland</option>
+                                <option value="">Deutschland</option>
+                            </select>
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Street</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">City</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Post code</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">House</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                    </div>
+
+                    <div class="personal-area-form__title">Change password</div>
+                    <div class="form">
+                        <label class="form-label half">
+                            <span class="form-label__head">New password</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                        <label class="form-label half">
+                            <span class="form-label__head">Repeat password</span>
+                            <input type="text" placeholder="Enter">
+                        </label>
+                    </div>
+                    <button type="submit" class="button">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo logo--text footer__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Home </a></li>
+                    <li><a href="#">events</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <ul class="footer-contacts">
+                <li><a href="tel:+4 851 63 14151">
+                    <span class="icon"><img src="img/call.svg" alt=""></span>
+                    +4 851 63 14151</a></li>
+                <li><a href="mailto:test@test.test">
+                    <span class="icon"><img src="img/mail.svg" alt=""></span>
+                    Write to us</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © tickets.com 2023
+            </div>
+            <ul class="social-networks">
+                <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="location-dropdown custom-dropdown" id="location-dropdown">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list">
+    </label>
+    <ul id="tips-list">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
+<div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+    <ul>
+        <li><a href="#">Ukrainian</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+    </ul>
+</div>
+<script>
+    var adminAjax = '';
+</script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
