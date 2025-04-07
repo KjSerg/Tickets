@@ -1,6 +1,9 @@
 .personal-area {
   &-section {
     padding: 8rem 0;
+    @media (max-width: 450px){
+      padding: 3rem 0;
+    }
   }
 
   &-head {
@@ -8,7 +11,9 @@
     margin-bottom: 6rem;
     border-bottom: 1px solid #ECE0E2;
     overflow: auto;
-
+    @media (max-width: 450px){
+      margin-bottom: 3rem;
+    }
     &__item {
       display: flex;
       justify-content: center;
