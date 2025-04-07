@@ -1,12 +1,19 @@
 .checkout {
   &__subtitle {
     margin-bottom: 2.5rem;
+    @media (max-width: 660px){
+      margin-bottom: 1.5rem;
+    }
     color: #0C0E12;
     font-size: 2.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: 3rem;
     text-transform: uppercase;
+    @media (max-width: 450px){
+      font-size: 2rem;
+      font-weight: 600;
+    }
   }
 
   &-confirmation {
@@ -47,7 +54,9 @@
 
     ul {
       margin-bottom: 4rem;
-
+      @media (max-width: 450px){
+        margin-bottom: 2rem;
+      }
       li {
         display: flex;
         gap: 1rem;
@@ -55,22 +64,47 @@
 
         &:not(:last-child) {
           margin-bottom: 2.4rem;
+          @media (max-width: 450px){
+            margin-bottom: 1rem;
+          }
         }
       }
+    }
+
+    @media (max-width: 767px){
+      padding: 2rem;
+    }
+    @media (max-width: 450px){
+      padding: 1rem;
     }
   }
 
   &-container {
     display: flex;
     gap: 8rem;
+    @media (max-width: 1400px){
+      gap: 3rem;
+    }
+    @media (max-width: 1100px){
+      flex-direction: column;
+    }
   }
 
   &-main {
     width: calc(100% - 60rem);
+    @media (max-width: 1400px){
+      width: calc(100% - 57rem);
+    }
+    @media (max-width: 1100px){
+      width: 100%;
+    }
   }
 
   &-sidebar {
     width: 52rem;
+    @media (max-width: 1100px){
+      width: 100%;
+    }
   }
 
   &-head {
@@ -81,6 +115,9 @@
     border: 1px solid #ECE0E2;
     &:not(:last-child){
       margin-bottom: 6rem;
+      @media (max-width: 660px){
+        margin-bottom: 3rem;
+      }
     }
   }
 
@@ -119,6 +156,7 @@
   }
 
   &-ticket {
+    position: relative;
     display: flex;
     align-items: flex-end;
     gap: 1.2rem;
@@ -126,6 +164,18 @@
     margin: 2rem;
     width: calc(100% - 4rem);
     border-top: 1px solid #ECE0E2;
+    @media (max-width: 660px){
+      margin: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 100%;
+    }
+    @media (max-width: 660px){
+      flex-wrap: wrap-reverse;
+    }
+    @media (max-width: 450px){
+      flex-wrap: wrap;
+    }
     &-add{
       border-top: 1px solid #ECE0E2;
       display: flex;
@@ -133,6 +183,7 @@
       justify-content: center;
       padding-bottom: 2rem;
       padding-top: 2rem;
+      margin: 0 2rem;
       &__button{
         width: 5.6rem;
         height: 5.6rem;
@@ -156,6 +207,11 @@
       justify-content: center;
       flex-grow: 0;
       flex-shrink: 0;
+      @media (max-width: 450px){
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
     }
     &-price{
       color:#555659;
@@ -165,6 +221,9 @@
       font-weight: 600;
       line-height: 4.8rem;
       text-transform: uppercase;
+      @media (max-width: 450px){
+        line-height: 3rem;
+      }
     }
     &-qnt{
       display: flex;
@@ -217,8 +276,19 @@
     &-column {
       display: block;
       width: 21rem;
+      @media (max-width: 660px){
+        width: calc(50% - 0.6rem);
+      }
+
+      @media (max-width: 450px){
+        width: 100%;
+      }
       &:last-child{
         width: 10rem;
+        margin-left: auto;
+        @media (max-width: 450px){
+          width: 100%;
+        }
       }
 
       &__title {
@@ -237,7 +307,10 @@
   &-tickets {
     &-details {
       display: flex;
-
+      @media (max-width: 420px){
+        flex-direction: column;
+        align-items: center;
+      }
       .event-information__item {
         font-weight: 500;
 
@@ -251,6 +324,9 @@
         flex-direction: column;
         padding: 2rem;
         width: 100%;
+        @media (max-width: 660px){
+          padding: 1rem;
+        }
       }
 
       &__title {
@@ -261,6 +337,11 @@
         font-weight: 600;
         line-height: 2.8rem;
         text-transform: uppercase;
+        @media (max-width: 450px){
+          margin-bottom: 3rem;
+          font-size: 2rem;
+          font-weight: 500;
+        }
       }
 
       &__image {
@@ -273,6 +354,10 @@
   }
 
   &-contacts{
+    margin-bottom: 6rem;
+    @media (max-width: 660px){
+      margin-bottom: 3rem;
+    }
     .form{
       gap: 2.4rem 1rem;
       &:not(:last-child){
@@ -287,6 +372,88 @@
       font-weight: 500;
       line-height: 2.6rem;
       text-transform: uppercase;
+      @media (max-width: 450px){
+        margin-bottom: 1.4rem;
+        font-size: 1.8rem;
+      }
     }
   }
+
+  &-method{
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 0.8rem;
+    }
+    &__price{
+      color: #0C0E12;
+      margin-left: auto;
+    }
+    &__icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.6rem;
+      height: 3.6rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+      &:not(:last-child){
+        padding-right: 3px;
+        margin-right: 3px;
+        border-right: 1px solid #ECE0E2;
+      }
+    }
+    &-icons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-box{
+      display: flex;
+      align-items: center;border: 1px solid rgba(12, 14, 18, 0.20);
+      padding: 3.2rem;
+      gap: 1.6rem;
+      color:  #555659;
+      text-align: center;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2.6rem;
+      cursor: pointer;
+      &:hover{
+        border-color: #E43E59;
+      }
+      @media (max-width: 767px){
+        padding: 2rem;
+      }
+      @media (max-width: 500px){
+        padding: 0.8rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+
+    }
+    &__price{
+      white-space: nowrap;
+    }
+    &__name{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    input{
+      display: none;
+      &:checked + .checkout-method-box{
+        border-color: #E43E59;
+      }
+    }
+  }
+
+  &-methods{
+    &-list{
+      &:not(:last-child){
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
 }

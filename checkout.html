@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css" />
 </head>
 <body>
 <header class="header">
@@ -204,47 +204,111 @@
                     <div class="border-box checkout-contacts">
                         <div class="checkout-contacts__title">Enter data only in Latin letters.</div>
                         <div class="form">
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">First name </span>
                                 <input type="text" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Last name</span>
                                 <input type="text" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Country</span>
                                 <select class="select">
                                     <option value="">Deutschland</option>
                                     <option value="">Deutschland</option>
                                 </select>
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Street</span>
                                 <input type="text" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">City</span>
                                 <input type="text" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Post code</span>
                                 <input type="text" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">House</span>
                                 <input type="text" placeholder="Enter">
                             </label>
                         </div>
-                        <div class="checkout-contacts__title">Please fill in the e-mail field carefully so that the ticket delivery goes well.</div>
+                        <div class="checkout-contacts__title">Please fill in the e-mail field carefully so that the
+                            ticket delivery goes well.
+                        </div>
                         <div class="form">
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Email</span>
                                 <input type="email" placeholder="Enter">
                             </label>
-                            <label  class="form-label half">
+                            <label class="form-label half">
                                 <span class="form-label__head">Phone</span>
-                                <input type="tel" placeholder="Enter" >
+                                <input type="tel" placeholder="Enter">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checkout__subtitle">Shipping and payment</div>
+                    <div class="border-box checkout-methods">
+                        <div class="checkout-contacts__title">Delivery method</div>
+                        <div class="checkout-methods-list">
+                            <label class="checkout-method">
+                                <input type="radio" name="delivery_method" checked value="email">
+                                <span class="checkout-method-box">
+                                    <span class="checkout-method-icons">
+                                        <span class="checkout-method__icon"><img src="img/print.svg" alt=""></span>
+                                    </span>
+                                    <span class="checkout-method__name">Print@home</span>
+                                    <span class="checkout-method__price">Free</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="checkout-contacts__title">Payment method</div>
+                        <div class="checkout-methods-list">
+                            <label class="checkout-method">
+                                <input type="radio" name="payment_method" checked value="Visa/Mastercard - EUR">
+                                <span class="checkout-method-box">
+                                    <span class="checkout-method-icons">
+                                        <span class="checkout-method__icon"><img src="img/visa.png" alt=""></span>
+                                        <span class="checkout-method__icon"><img src="img/mk.png" alt=""></span>
+                                    </span>
+                                    <span class="checkout-method__name">Visa/Mastercard - EUR</span>
+                                    <span class="checkout-method__price">+ 0,78 $</span>
+                                </span>
+                            </label>
+                            <label class="checkout-method">
+                                <input type="radio" name="payment_method"  value="Visa/Mastercard - USD">
+                                <span class="checkout-method-box">
+                                    <span class="checkout-method-icons">
+                                        <span class="checkout-method__icon"><img src="img/visa.png" alt=""></span>
+                                        <span class="checkout-method__icon"><img src="img/mk.png" alt=""></span>
+                                    </span>
+                                    <span class="checkout-method__name">Visa/Mastercard - USD</span>
+                                    <span class="checkout-method__price">+ 0,84 $</span>
+                                </span>
+                            </label>
+                            <label class="checkout-method">
+                                <input type="radio" name="payment_method"  value="PayPal">
+                                <span class="checkout-method-box">
+                                    <span class="checkout-method-icons">
+                                        <span class="checkout-method__icon"><img src="img/paypal-seeklogo%201.svg" alt=""></span>
+                                    </span>
+                                    <span class="checkout-method__name">PayPal</span>
+                                    <span class="checkout-method__price">+ 2,08 $</span>
+                                </span>
+                            </label>
+                            <label class="checkout-method">
+                                <input type="radio" name="payment_method"  value="Cryptocurrency">
+                                <span class="checkout-method-box">
+                                    <span class="checkout-method-icons">
+                                        <span class="checkout-method__icon"><img src="img/binance.png" alt=""></span>
+                                    </span>
+                                    <span class="checkout-method__name">Cryptocurrency</span>
+                                    <span class="checkout-method__price">+ 0,78 $</span>
+                                </span>
                             </label>
                         </div>
                     </div>
