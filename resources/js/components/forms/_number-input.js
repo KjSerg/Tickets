@@ -1,21 +1,30 @@
-import Inputmask from "inputmask";
 
 export const initTelMask = () => {
-    $('input[type="tel"]').each(function () {
-        const mask = $(this).attr('data-mask') || "+38(999)9999999";
-        Inputmask({
-            mask: mask,
-            greedy: false,
-            placeholder: "_",
-            showMaskOnHover: true
-        }).mask(this);
-        const $t = $(this);
-        $t.on('focusout change', function () {
-            const $this = $(this);
-            let val = $this.val().trim();
-            val = val.replaceAll('_', '', val);
-            if (val.length < 15) {
-                $this.val('');
+    const inputs = document.querySelectorAll("input[type='tel']");
+
+    if (!inputs.length) return;
+
+    inputs.forEach((input) => {
+        const iti = window.intlTelInput(input, {
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("UA"));
+            },
+            nationalMode: false,
+            autoHideDialCode: false,
+            formatOnDisplay: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+        });
+
+        input.addEventListener("blur", function () {
+            if (!iti.isValidNumber()) {
+                input.value = "";
+                input.classList.add("error"); // можна стилізувати
+            } else {
+                input.value = iti.getNumber(); // нормалізовано у форматі +380....
             }
         });
     });

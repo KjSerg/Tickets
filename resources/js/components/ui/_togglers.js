@@ -25,6 +25,17 @@ export const toggler = () => {
             }
         }
     });
+    $doc.on('change', '.checkout-promo__checkbox', function (e) {
+        e.preventDefault();
+        const $t = $(this);
+        const isActive = $t.prop('checked') === true;
+        const $container = $t.closest('.checkout-promo').find('.checkout-promo-container');
+        if(isActive){
+            $container.slideDown();
+        }else {
+            $container.slideUp();
+        }
+    });
 
 }
 export const dropdownCustom = () => {

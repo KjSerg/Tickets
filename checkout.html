@@ -1,0 +1,387 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33TicketsGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <a href="#" class="logo logo--text header__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <form class="header-search">
+                <button type="submit" class="header-search__icon">
+                    <img src="img/search.svg" alt="">
+                </button>
+                <label>
+                    <input type="text" name="s" placeholder="Search">
+                </label>
+            </form>
+            <form class="header-controls">
+                <input type="hidden" name="location" class="selected-location">
+                <label class="header-controls-item">
+                    <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                    <input type="text" placeholder="Date" readonly class="datepicker">
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </label>
+                <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                    <span class="header-controls-item__text">Ukraine</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+                <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                    <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                    <span class="header-controls-item__text">En</span>
+                    <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+                </a>
+            </form>
+            <a href="#" class="header__button">
+                Add Event
+            </a>
+            <a href="#" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-container">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">Concert</a></li>
+                        <li><a href="#">Theater</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Festival</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Tour</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-login">
+                    <span class="header-login__icon"><img src="img/login.svg" alt=""></span>
+                    Sign in
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile">
+        <form class="header-search">
+            <button type="submit" class="header-search__icon">
+                <img src="img/search.svg" alt="">
+            </button>
+            <label>
+                <input type="text" name="s" placeholder="Search">
+            </label>
+        </form>
+        <form class="header-controls">
+            <input type="hidden" name="location" class="selected-location">
+            <label class="header-controls-item">
+                <span class="header-controls-item__icon"><img src="img/calendar_month.svg" alt=""></span>
+                <input type="text" placeholder="Date" readonly class="datepicker">
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </label>
+            <a href="#location-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/location_on.svg" alt=""></span>
+                <span class="header-controls-item__text">Ukraine</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+            <a href="#languages-dropdown" class="header-controls-item dropdown-trigger">
+                <span class="header-controls-item__icon"><img src="img/language.svg" alt=""></span>
+                <span class="header-controls-item__text">En</span>
+                <span class="header-controls-item__arrow"><img src="img/arrow_back_ios.svg" alt=""></span>
+            </a>
+        </form>
+    </div>
+</header>
+<main class="content">
+    <section class="breadcrumbs-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="#">Home
+                    <span>/</span>
+                </a>
+                <span>Checkout</span>
+            </div>
+        </div>
+    </section>
+    <section class="checkout-section section-padding section">
+        <div class="container">
+            <div class="checkout-head">
+                <div class="title checkout__title">
+                    <h1>Checkout</h1>
+                </div>
+            </div>
+            <form class="checkout-container checkout-form">
+                <div class="checkout-main">
+                    <div class="checkout__subtitle">Selected tickets</div>
+                    <div class="checkout-box checkout-tickets">
+                        <div class="checkout-tickets-details">
+                            <div class="checkout-tickets-details__image">
+                                <img src="img/Event-image.jpg" class="cover" alt="">
+                            </div>
+                            <div class="checkout-tickets-details-content">
+                                <a href="#" class="checkout-tickets-details__title">
+                                    Artem Pivovarov solo concert
+                                </a>
+                                <ul class="event-information">
+                                    <li class="event-information__item">
+                                        <div class="icon"><img src="img/calendar_month_red.svg" alt=""></div>
+                                        7 April | 19:00 th
+                                    </li>
+                                    <li class="event-information__item">
+                                        <div class="icon"><img src="img/location_on.red.svg" alt=""></div>
+                                        “Palace of Sports” <br> Kyiv, Sportyvna Square, 1
+                                    </li>
+                                    <li class="event-information__item">
+                                        <div class="icon"><img src="img/confirmation_number_red.svg" alt=""></div>
+                                        20$ - 50$
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="checkout-ticket">
+                            <label class="checkout-ticket-column">
+                                <span class="checkout-ticket-column__title">Select zone</span>
+                                <select name="zone" class="select">
+                                    <option value="" disabled selected>Select</option>
+                                    <option>zone 1</option>
+                                    <option>zone 2</option>
+                                </select>
+                            </label>
+                            <label class="checkout-ticket-column">
+                                <span class="checkout-ticket-column__title">Select Place</span>
+                                <select name="Place" class="select">
+                                    <option value="" disabled selected>Select</option>
+                                    <option>Place 1</option>
+                                    <option>Place 2</option>
+                                </select>
+                            </label>
+                            <label class="checkout-ticket-column">
+                                <span class="checkout-ticket-column__title"></span>
+                                <span class="checkout-ticket-qnt form-quantity">
+                                    <a href="#" class="minus">
+                                        <img src="img/minus.svg" alt="">
+                                    </a>
+                                    <input type="number" class="number-input" readonly value="1">
+                                    <a href="#" class="plus">
+                                        <img src="img/plus.svg" alt="">
+                                    </a>
+                                </span>
+
+                            </label>
+                            <div class="checkout-ticket-column">
+                                <span class="checkout-ticket-column__title">
+                                    <a href="#" class="checkout-ticket-remove">
+                                        <img src="img/close.svg" alt="">
+                                    </a>
+                                </span>
+                                <div class="checkout-ticket-price">
+                                    50 $
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="checkout-ticket-add">
+                            <a href="./components/checkout-ticket.html" class="checkout-ticket-add__button ">
+                                <img src="img/plus.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="checkout__subtitle">Contact details</div>
+                    <div class="border-box checkout-contacts">
+                        <div class="checkout-contacts__title">Enter data only in Latin letters.</div>
+                        <div class="form">
+                            <label  class="form-label half">
+                                <span class="form-label__head">First name </span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">Last name</span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">Country</span>
+                                <select class="select">
+                                    <option value="">Deutschland</option>
+                                    <option value="">Deutschland</option>
+                                </select>
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">Street</span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">City</span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">Post code</span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">House</span>
+                                <input type="text" placeholder="Enter">
+                            </label>
+                        </div>
+                        <div class="checkout-contacts__title">Please fill in the e-mail field carefully so that the ticket delivery goes well.</div>
+                        <div class="form">
+                            <label  class="form-label half">
+                                <span class="form-label__head">Email</span>
+                                <input type="email" placeholder="Enter">
+                            </label>
+                            <label  class="form-label half">
+                                <span class="form-label__head">Phone</span>
+                                <input type="tel" placeholder="Enter" >
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-sidebar">
+                    <div class="checkout__subtitle">Confirmation</div>
+                    <div class="checkout-confirmation">
+                        <ul>
+                            <li>
+                                <div class="checkout-confirmation__key">tickets</div>
+                                <div class="checkout-confirmation__value tickets-price">50 $</div>
+                            </li>
+                            <li>
+                                <div class="checkout-confirmation__key">delivery fee</div>
+                                <div class="checkout-confirmation__value delivery-price">0 $</div>
+                            </li>
+                            <li>
+                                <div class="checkout-confirmation__key">payment fee</div>
+                                <div class="checkout-confirmation__value payment-price">0,78 $</div>
+                            </li>
+                            <li>
+                                <div class="checkout-confirmation__key">service fee</div>
+                                <div class="checkout-confirmation__value service-price">1,99 $</div>
+                            </li>
+                            <li class="checkout-confirmation-total">
+                                <div class="checkout-confirmation__key">Total:</div>
+                                <div class="checkout-confirmation__value service-price">52,77 $</div>
+                            </li>
+                        </ul>
+                        <div class="checkout-promo">
+                            <div class="form-consent checkout-promo-checkbox">
+                                <label class="form-consent-box">
+                                    <input type="checkbox" class="checkout-promo__checkbox">
+                                    <span></span>
+                                </label>
+                                <div class="form-consent-text">
+                                    <p>I have a promo code</p>
+                                </div>
+                            </div>
+                            <div class="checkout-promo-container">
+                                <div class="checkout-promo-row">
+                                    <label class="checkout-promo-label">
+                                        <input type="text" placeholder="Enter code">
+                                    </label>
+                                    <a href="#" class="checkout-promo__button button">
+                                        Save
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button" type="submit">
+                            Make order
+                        </button>
+                    </div>
+                    <div class="form-consent">
+                        <label class="form-consent-box">
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                        <div class="form-consent-text">
+                            <p>I agree to the processing of personal data and the <a href="#">Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo logo--text footer__logo">
+                Tickets
+                <span>go</span>
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Home </a></li>
+                    <li><a href="#">events</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <ul class="footer-contacts">
+                <li><a href="tel:+4 851 63 14151">
+                    <span class="icon"><img src="img/call.svg" alt=""></span>
+                    +4 851 63 14151</a></li>
+                <li><a href="mailto:test@test.test">
+                    <span class="icon"><img src="img/mail.svg" alt=""></span>
+                    Write to us</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © tickets.com 2023
+            </div>
+            <ul class="social-networks">
+                <li><a href="#"><img src="img/s1.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s2.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s3.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/s4.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="location-dropdown custom-dropdown" id="location-dropdown">
+    <label class="location-dropdown-search">
+        <span class="location-dropdown-search__icon"><img src="img/search.svg" alt=""></span>
+        <input type="text" placeholder="Enter the name of the city" class="location-search-input tips-input"
+               data-selector="#tips-list">
+    </label>
+    <ul id="tips-list">
+        <li><a href="#">Kyiv</a></li>
+        <li><a href="#">Odesa</a></li>
+        <li><a href="#">Dnipro</a></li>
+        <li><a href="#">Lviv</a></li>
+        <li><a href="#">Kharkiv</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+        <li><a href="#">Khmelnytskiy</a></li>
+    </ul>
+</div>
+<div class="languages-dropdown custom-dropdown" id="languages-dropdown">
+    <ul>
+        <li><a href="#">Ukrainian</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+    </ul>
+</div>
+<script>
+    var adminAjax = '';
+</script>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"></script> <!-- для форматування -->
+<script src="assets/js/app.js"></script>
+</body>
+</html>

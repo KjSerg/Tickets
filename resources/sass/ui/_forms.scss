@@ -163,7 +163,15 @@ select.select {
 
 .selectric {
   background-color: #fff;
-  border: 1px solid #D0D4DD;
+
+  border-radius: 4rem;
+  border: 1px solid #ECE0E2;
+  color: rgba(12, 14, 18, 0.40);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+
 
   &-items {
     background-color: #fff;
@@ -189,7 +197,9 @@ select.select {
   }
 
   .label {
-    padding: 1rem 0;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-left: 2.4rem;
     height: auto;
     font-family: "Inter", serif;
     color: #555659;
@@ -197,7 +207,10 @@ select.select {
     font-style: normal;
     font-weight: 500;
     line-height: 2.2rem;
-    text-transform: uppercase;
+  }
+
+  .label{
+
   }
 
 }
@@ -237,4 +250,18 @@ textarea {
 
 .checkbox-group {
   width: 100%;
+}
+.iti__selected-flag{
+  background-color: rgba(#fff, 0)!important;
+}
+.iti {
+  button{
+    padding: 0;
+    border: none;
+    background-color: rgba(#fff, 0);
+    &:hover{
+      background-color: rgba(#fff, 0)!important;
+
+    }
+  }
 }

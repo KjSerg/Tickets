@@ -145,3 +145,5 @@ export function moveToElement($el) {
         scrollTop: $el.offset().top
     });
 }
+
+export const $document = $(document);

@@ -16,6 +16,7 @@ import {hoveredModel} from "./ui/_models";
 import {flatpickrInit} from "../plugins/_flatpickr-init";
 import {select2Init} from "../plugins/_select2-init";
 import {tips} from "./ui/_tips";
+import {addTicketRow, removeTicketRow} from "./_checkout";
 
 export default class Application {
     constructor() {
@@ -73,6 +74,8 @@ export default class Application {
             selectrickInit();
             tips();
             dropdownCustom();
+            addTicketRow();
+            removeTicketRow();
             this.showLoaderOnClick();
             this.linkListener();
             this.mainProductTrigger();
