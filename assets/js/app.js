@@ -34877,6 +34877,42 @@ var Slick = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.mainSliderInit();
+      this.similarSliderInit();
+    }
+  }, {
+    key: "similarSliderInit",
+    value: function similarSliderInit() {
+      $(document).find('.similar-slider').each(function () {
+        var $slider = $(this);
+        var $section = $slider.closest('section');
+        var $prev = $section.find('.slick__prev');
+        var $next = $section.find('.slick__next');
+        var param = {
+          slidesToShow: 4,
+          arrows: true,
+          prevArrow: $prev,
+          nextArrow: $next,
+          dots: false,
+          adaptiveHeight: true,
+          responsive: [{
+            breakpoint: 1300,
+            settings: {
+              slidesToShow: 3
+            }
+          }, {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 2
+            }
+          }, {
+            breakpoint: 650,
+            settings: {
+              slidesToShow: 1
+            }
+          }]
+        };
+        $slider.slick(param);
+      });
     }
   }, {
     key: "mainSliderInit",
