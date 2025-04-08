@@ -41,6 +41,7 @@ export default class Slick {
                         breakpoint: 650,
                         settings: {
                             slidesToShow: 1,
+                            adaptiveHeight: true
                         }
                     },
                 ]

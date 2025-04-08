@@ -142,7 +142,6 @@
           border-radius: 6px;
           overflow: hidden;
           border: 1px solid #E43E59;
-
           img, svg {
             opacity: 0;
             transition: 0.4s ease-in-out;
@@ -170,6 +169,9 @@
       font-style: normal;
       font-weight: 500;
       line-height: 2rem;
+      @media (max-width:768px) {
+        font-size: 1.8rem;
+      }
       @media (max-width:450px) {
         width: 50%;
       }
@@ -188,6 +190,10 @@
       .icon {
         width: 2rem;
         height: 2rem;
+        @media (max-width:768px) {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
       }
 
       &__head {
@@ -228,6 +234,9 @@
 }
 
 .event {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding-top: 46.9rem;
   width: 100%;
@@ -417,13 +426,10 @@
     position: static;
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem 8rem;
+    padding: 2rem;
     transition: 0.2s ease-in-out;
     will-change: transform;
 
-    @media (max-width: 1200px) {
-      padding: 1rem 1rem 8rem;
-    }
     
 
     &__title {
@@ -443,9 +449,8 @@
     }
 
     & + .event__button {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
+      margin: auto;
+      margin-bottom: 0;
       width: calc(100% - 2rem);
       display: flex;
       background-color: #E43E59;

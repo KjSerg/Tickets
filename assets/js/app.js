@@ -31205,7 +31205,8 @@ var Slick = /*#__PURE__*/function () {
           }, {
             breakpoint: 650,
             settings: {
-              slidesToShow: 1
+              slidesToShow: 1,
+              adaptiveHeight: true
             }
           }]
         };
