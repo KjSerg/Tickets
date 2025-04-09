@@ -1,17 +1,19 @@
 import flatpickr from "flatpickr";
 
 export const flatpickrInit = () => {
-    document.querySelectorAll('.datepicker').forEach(function (element) {
-        flatpickr(element, {
+    $(document).find('.datepicker:not(.flatpickr-input)').each(function () {
+        const $t = $(this);
+        $t.flatpickr({
             mode: "range",
             dateFormat: "d.m.Y",
             minDate: "today",
-            onValueUpdate: function (selectedDates, dateStr, instance) {
-                console.log(selectedDates)
-                console.log(dateStr)
-                console.log(instance)
+            onChange: function (selectedDates, dateStr, instance) {
+                if (selectedDates.length === 2) {
+                    $t.closest('form').trigger('submit');
+                }
             }
         });
-    })
+    });
+
 
 }

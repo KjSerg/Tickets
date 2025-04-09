@@ -47,11 +47,13 @@
 
   &-filter {
     position: relative;
+    z-index: 10;
     margin-bottom: 3rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid #ECE0E2;
+
     @media (max-width:375px) {
       flex-direction: column;
     }
@@ -89,7 +91,7 @@
     &-dropdown {
       position: absolute;
       z-index: 10;
-      width: 16rem;
+      width: 20rem;
       height: fit-content;
       max-height: 30rem;
       overflow: auto;
@@ -228,6 +230,12 @@
           pointer-events: auto;
           transform: translateY(0);
         }
+      }
+    }
+    &.not-active{
+      opacity: 1;
+      .events-filter-dropdown__label{
+        pointer-events: none;
       }
     }
   }

@@ -1,6 +1,7 @@
 import {showMsg} from "../../plugins/_fancybox-init";
 import {selectrickInit} from "../../plugins/_selectric-init";
 import {hidePreloader, showPreloader} from "../utils/_helpers";
+import {flatpickrInit} from "../../plugins/_flatpickr-init";
 
 const parser = new DOMParser();
 let loading = false;
@@ -88,6 +89,7 @@ export const renderCatalog = (url, data = {}, addToHistory = true) => {
         } else {
             $(document).find('.catalog-filter').html($filter.html());
             selectrickInit();
+            flatpickrInit();
         }
         hidePreloader();
     }).fail((r) => {

@@ -175,4 +175,30 @@ export default class Application {
             });
         });
     }
+    loadMore() {
+        let load = false;
+        const parser = new DOMParser();
+        $(document).on('click', '.button-load-more', function (e) {
+            e.preventDefault();
+            const $t = $(this);
+            const href = $t.attr('href');
+            if (load) return;
+            const $pagination = $(document).find('.pagination-container');
+            showPreloader();
+            $pagination.addClass('not-active');
+            $t.addClass('not-active');
+            $.ajax({
+                type: 'GET',
+                url: href,
+            }).done(function (r) {
+                hidePreloader();
+                let $requestBody = $(parser.parseFromString(r, "text/html"));
+                $(document).find('.container-js').append($requestBody.find('.container-js').html());
+                $pagination.html($requestBody.find('.pagination-container').html());
+                load = false;
+                $pagination.removeClass('not-active');
+                $t.remove();
+            });
+        });
+    }
 }

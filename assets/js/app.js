@@ -30065,6 +30065,34 @@ var Application = /*#__PURE__*/function () {
         });
       });
     }
+  }, {
+    key: "loadMore",
+    value: function loadMore() {
+      var load = false;
+      var parser = new DOMParser();
+      $(document).on('click', '.button-load-more', function (e) {
+        e.preventDefault();
+        var $t = $(this);
+        var href = $t.attr('href');
+        if (load) return;
+        var $pagination = $(document).find('.pagination-container');
+        (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+        $pagination.addClass('not-active');
+        $t.addClass('not-active');
+        $.ajax({
+          type: 'GET',
+          url: href
+        }).done(function (r) {
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+          var $requestBody = $(parser.parseFromString(r, "text/html"));
+          $(document).find('.container-js').append($requestBody.find('.container-js').html());
+          $pagination.html($requestBody.find('.pagination-container').html());
+          load = false;
+          $pagination.removeClass('not-active');
+          $t.remove();
+        });
+      });
+    }
   }]);
 }();
 
@@ -30396,7 +30424,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../plugins/_fancybox-init */ "./resources/js/plugins/_fancybox-init.js");
 /* harmony import */ var _plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../plugins/_selectric-init */ "./resources/js/plugins/_selectric-init.js");
 /* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/_helpers */ "./resources/js/components/utils/_helpers.js");
+/* harmony import */ var _plugins_flatpickr_init__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../plugins/_flatpickr-init */ "./resources/js/plugins/_flatpickr-init.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 
 
 
@@ -30486,6 +30516,7 @@ var renderCatalog = function renderCatalog(url) {
     } else {
       $(document).find('.catalog-filter').html($filter.html());
       (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__.selectrickInit)();
+      (0,_plugins_flatpickr_init__WEBPACK_IMPORTED_MODULE_3__.flatpickrInit)();
     }
     (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.hidePreloader)();
   }).fail(function (r) {
@@ -31381,17 +31412,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   flatpickrInit: () => (/* binding */ flatpickrInit)
 /* harmony export */ });
 /* harmony import */ var flatpickr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/esm/index.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 var flatpickrInit = function flatpickrInit() {
-  document.querySelectorAll('.datepicker').forEach(function (element) {
-    (0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])(element, {
+  $(document).find('.datepicker:not(.flatpickr-input)').each(function () {
+    var $t = $(this);
+    $t.flatpickr({
       mode: "range",
       dateFormat: "d.m.Y",
       minDate: "today",
-      onValueUpdate: function onValueUpdate(selectedDates, dateStr, instance) {
-        console.log(selectedDates);
-        console.log(dateStr);
-        console.log(instance);
+      onChange: function onChange(selectedDates, dateStr, instance) {
+        if (selectedDates.length === 2) {
+          $t.closest('form').trigger('submit');
+        }
       }
     });
   });
