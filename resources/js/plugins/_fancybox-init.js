@@ -25,7 +25,7 @@ export function showMsg(msg = '', title = '') {
     const selector = '#dialog';
     const $modal = $(document).find(selector);
     if ($modal.length === 0) {
-        alert(msg);
+       $.fancybox.open(title);
         return;
     }
     $modal.find('.modal__title').html(title);

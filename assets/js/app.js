@@ -29977,7 +29977,7 @@ var Application = /*#__PURE__*/function () {
         (0,_checkout__WEBPACK_IMPORTED_MODULE_18__.removeTicketRow)();
         _this2.showLoaderOnClick();
         _this2.linkListener();
-        _this2.mainProductTrigger();
+        _this2.addToFavorites();
         var form = new _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__["default"]('.form-js');
         var slick = new _plugins_Slick__WEBPACK_IMPORTED_MODULE_10__["default"]();
         slick.gallerySliderRefresh();
@@ -30024,25 +30024,45 @@ var Application = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "mainProductTrigger",
-    value: function mainProductTrigger() {
-      this.$doc.on('click', '.main-product-box__item', function (e) {
+    key: "addToFavorites",
+    value: function addToFavorites() {
+      _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.add-to-favorites', function (e) {
         e.preventDefault();
         var $t = $(this);
-        window.location.href = $t.attr('href');
-      });
-      this.$doc.on('click', '.main-product', function (e) {
-        e.preventDefault();
-        var $t = $(this);
-        var $box = $t.find('.main-product-box');
-        if ($(window).width() > 1023) return;
-        $box.addClass('active');
-      });
-      this.$doc.mouseup(function (e) {
-        var div = $('.main-product-box');
-        if (!div.is(e.target) && div.has(e.target).length === 0) {
-          div.removeClass('active');
-        }
+        var id = $t.attr('data-id');
+        if (id === undefined) return;
+        id = Number(id);
+        $t.addClass('not-active');
+        (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+        var options = {
+          type: "POST",
+          url: adminAjax,
+          data: {
+            action: 'toggle_favorites',
+            id: id
+          }
+        };
+        $.ajax(options).done(function (response) {
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+          $t.removeClass('not-active');
+          if (response) {
+            if ((0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.isJsonString)(response)) {
+              response = JSON.parse(response);
+              var favorites = response.favorites || [];
+              var icon_active = response.icon_active;
+              var icon_not_active = response.icon_not_active;
+              if (favorites.includes(id)) {
+                _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find(".add-to-favorites[data-id=\"".concat(id, "\"]")).addClass('active');
+                _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find(".add-to-favorites[data-id=\"".concat(id, "\"]")).html(icon_not_active);
+              } else {
+                _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find(".add-to-favorites[data-id=\"".concat(id, "\"]")).removeClass('active');
+                _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find(".add-to-favorites[data-id=\"".concat(id, "\"]")).html(icon_active);
+              }
+            } else {
+              (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_5__.showMsg)(response);
+            }
+          }
+        });
       });
     }
   }]);
@@ -31185,8 +31205,10 @@ var Slick = /*#__PURE__*/function () {
         var $section = $slider.closest('section');
         var $prev = $section.find('.slick__prev');
         var $next = $section.find('.slick__next');
+        var slidesToShow = 4;
+        var slides = $slider.find('> *');
         var param = {
-          slidesToShow: 4,
+          slidesToShow: slidesToShow,
           arrows: true,
           prevArrow: $prev,
           nextArrow: $next,
@@ -31210,6 +31232,7 @@ var Slick = /*#__PURE__*/function () {
             }
           }]
         };
+        if (slides.length < slidesToShow) return;
         $slider.slick(param);
       });
     }
@@ -31319,7 +31342,7 @@ function showMsg() {
   var selector = '#dialog';
   var $modal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).find(selector);
   if ($modal.length === 0) {
-    alert(msg);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().fancybox.open(title);
     return;
   }
   $modal.find('.modal__title').html(title);

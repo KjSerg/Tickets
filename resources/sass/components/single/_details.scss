@@ -26,6 +26,13 @@
     }
   }
   &-add-to-favorites{
+    &:hover{
+      svg{
+        path{
+          fill: #fff;
+        }
+      }
+    }
     &.active{
       svg{
         path{

@@ -17,8 +17,10 @@ export default class Slick {
             const $section = $slider.closest('section');
             const $prev = $section.find('.slick__prev');
             const $next = $section.find('.slick__next');
+            let slidesToShow = 4;
+            const slides = $slider.find('> *');
             const param = {
-                slidesToShow: 4,
+                slidesToShow: slidesToShow,
                 arrows: true,
                 prevArrow: $prev,
                 nextArrow: $next,
@@ -46,6 +48,7 @@ export default class Slick {
                     },
                 ]
             };
+            if(slides.length < slidesToShow) return;
             $slider.slick(param);
         });
     }

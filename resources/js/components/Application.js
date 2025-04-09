@@ -1,9 +1,17 @@
-import {detectBrowser, isHorizontal, isMobile, showPreloader} from "./utils/_helpers";
+import {
+    $document,
+    detectBrowser,
+    hidePreloader,
+    isHorizontal,
+    isJsonString,
+    isMobile,
+    showPreloader
+} from "./utils/_helpers";
 import {burger} from "./ui/_burger";
 import {accordion} from "./ui/_accardion";
 import {numberInput} from "./forms/_number-input";
 import {showPassword} from "./forms/_show-password";
-import {fancyboxInit, showNotices} from "../plugins/_fancybox-init";
+import {fancyboxInit, showMsg, showNotices} from "../plugins/_fancybox-init";
 import {selectrickInit} from "../plugins/_selectric-init";
 import FormHandler from "./forms/FormHandler";
 import {dropdownCustom, toggler} from "./ui/_togglers";
@@ -78,7 +86,7 @@ export default class Application {
             removeTicketRow();
             this.showLoaderOnClick();
             this.linkListener();
-            this.mainProductTrigger();
+            this.addToFavorites();
             const form = new FormHandler('.form-js');
             const slick = new Slick();
             slick.gallerySliderRefresh();
@@ -126,25 +134,45 @@ export default class Application {
         });
     }
 
-    mainProductTrigger() {
-        this.$doc.on('click', '.main-product-box__item', function (e) {
+    addToFavorites() {
+        $document.on('click', '.add-to-favorites', function (e) {
             e.preventDefault();
             const $t = $(this);
-            window.location.href = $t.attr('href');
-        });
-        this.$doc.on('click', '.main-product', function (e) {
-            e.preventDefault();
-            const $t = $(this);
-            const $box = $t.find('.main-product-box');
-            if ($(window).width() > 1023) return;
-            $box.addClass('active');
-        });
-        this.$doc.mouseup(function (e) {
-            var div = $('.main-product-box');
-            if (!div.is(e.target)
-                && div.has(e.target).length === 0) {
-                div.removeClass('active');
-            }
+            let id = $t.attr('data-id');
+            if (id === undefined) return;
+            id = Number(id);
+            $t.addClass('not-active');
+            showPreloader();
+            const options = {
+                type: "POST",
+                url: adminAjax,
+                data: {
+                    action: 'toggle_favorites',
+                    id: id
+                },
+            };
+            $.ajax(options).done((response) => {
+                hidePreloader();
+                $t.removeClass('not-active');
+                if (response) {
+                    if (isJsonString(response)) {
+                        response = JSON.parse(response);
+                        const favorites = response.favorites || [];
+                        const icon_active = response.icon_active;
+                        const icon_not_active = response.icon_not_active;
+                        if (favorites.includes(id)) {
+                            $document.find(`.add-to-favorites[data-id="${id}"]`).addClass('active');
+                            $document.find(`.add-to-favorites[data-id="${id}"]`).html(icon_not_active);
+
+                        } else {
+                            $document.find(`.add-to-favorites[data-id="${id}"]`).removeClass('active');
+                            $document.find(`.add-to-favorites[data-id="${id}"]`).html(icon_active);
+                        }
+                    } else {
+                        showMsg(response);
+                    }
+                }
+            });
         });
     }
 }
