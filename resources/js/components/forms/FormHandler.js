@@ -3,6 +3,7 @@ import 'selectric';
 import {selectrickInit} from "../../plugins/_selectric-init";
 import {showMsg, showNotices} from "../../plugins/_fancybox-init";
 import {initTelMask} from "./_number-input";
+import {catalogFilterInit} from "./_catalog-filter";
 
 export default class FormHandler {
     constructor(selector) {
@@ -51,7 +52,27 @@ export default class FormHandler {
 
     validateForm($form) {
         let isValid = true;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{5,}$/;
+
+        const $password = $form.find('input[name="password"]');
+        const $passwordRepeat = $form.find('input[name="password_repeat"]');
+        if ($password.length > 0 && $passwordRepeat.length > 0) {
+            if ($password.val().trim() === '') {
+                $password.addClass('error');
+                return;
+            }
+            if ($password.val() !== $passwordRepeat.val()) {
+                $password.addClass('error');
+                $passwordRepeat.addClass('error');
+                return;
+            }
+            if (!passwordRegex.test($password.val())) {
+                this.showMessage(passwordErrorString);
+                return false;
+            }
+            $password.removeClass('error');
+            $passwordRepeat.removeClass('error');
+        }
 
         // Validate inputs and textareas
         $form.find('input, textarea').each((_, input) => {
@@ -59,7 +80,6 @@ export default class FormHandler {
             const $label = $input.closest('.form-label');
             const value = $input.val().trim();
             const regExp = $input.data('reg') ? new RegExp($input.data('reg')) : null;
-
             if ($input.attr('required') && (!value || (regExp && !regExp.test(value)))) {
                 isValid = false;
                 $input.addClass('error');
@@ -196,25 +216,22 @@ export default class FormHandler {
     showMessage(message, type = '', text = '', url = '') {
         const selector = '#dialog' + (type ? '-' + type : '');
         const $modal = $(document).find(selector);
-
         if ($modal.length === 0) {
-            alert(message);
-            if (url) {
-                window.location.href = url;
-            }
+            $.fancybox.open(message);
+            setTimeout(function () {
+                $.fancybox.close()
+            }, 3000)
+
             return;
         }
 
         $modal.find('.modal__title').html(message);
         $modal.find('.modal__text').html(text);
 
-        $.fancybox.open($modal, {
-            afterClose: function () {
-                if (url) {
-                    window.location.href = url;
-                }
-            }
-        });
+        $.fancybox.open($modal);
+        setTimeout(function () {
+            $.fancybox.close()
+        }, 3000)
     }
 
 

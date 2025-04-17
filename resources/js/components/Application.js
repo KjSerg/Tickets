@@ -19,10 +19,7 @@ import {tabs} from "./ui/_tabs";
 import Slick from "../plugins/Slick";
 import {catalogFilterInit} from "./forms/_catalog-filter";
 import {copyLink} from "./ui/_copy-link";
-import {showText} from "./ui/_show-text";
-import {hoveredModel} from "./ui/_models";
 import {flatpickrInit} from "../plugins/_flatpickr-init";
-import {select2Init} from "../plugins/_select2-init";
 import {tips} from "./ui/_tips";
 import {addTicketRow, removeTicketRow} from "./_checkout";
 
@@ -76,8 +73,6 @@ export default class Application {
             tabs();
             catalogFilterInit();
             copyLink();
-            showText();
-            hoveredModel();
             flatpickrInit();
             selectrickInit();
             tips();
@@ -87,6 +82,7 @@ export default class Application {
             this.showLoaderOnClick();
             this.linkListener();
             this.addToFavorites();
+            this.loadMore();
             const form = new FormHandler('.form-js');
             const slick = new Slick();
             slick.gallerySliderRefresh();

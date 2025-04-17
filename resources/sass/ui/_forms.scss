@@ -47,7 +47,7 @@
     font-weight: 500;
     line-height: 2.2rem;
     text-transform: uppercase;
-    &__head{
+    &__head, & > span{
       display: block;
       margin-bottom: 0.8rem;
     }
@@ -100,6 +100,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 2rem;
+    text-transform: none;
 
     &-box {
       display: flex;
