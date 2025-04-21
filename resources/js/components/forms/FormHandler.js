@@ -74,6 +74,27 @@ export default class FormHandler {
             $passwordRepeat.removeClass('error');
         }
 
+        const $password_new = $form.find('input[name="password_new"]');
+        const $password_repeat_new = $form.find('input[name="password_repeat_new"]');
+        if ($password.length > 0 && $password_new.length > 0 && $password.val().trim().length > 0) {
+            if ($password_new.val().trim() === '') {
+                $password_new.addClass('error');
+                return false;
+            }
+            if ($password_new.val() !== $password_repeat_new.val()) {
+                $password_repeat_new.addClass('error');
+                $password_new.addClass('error');
+                return;
+            }
+            if (!passwordRegex.test($password_new.val())) {
+                this.showMessage(passwordErrorString);
+                return false;
+            }
+            $password_new.removeClass('error');
+            $password.removeClass('error');
+            $password_repeat_new.removeClass('error');
+        }
+
         // Validate inputs and textareas
         $form.find('input, textarea').each((_, input) => {
             const $input = $(input);

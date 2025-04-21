@@ -23276,6 +23276,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugins_flatpickr_init__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../plugins/_flatpickr-init */ "./resources/js/plugins/_flatpickr-init.js");
 /* harmony import */ var _ui_tips__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ui/_tips */ "./resources/js/components/ui/_tips.js");
 /* harmony import */ var _checkout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_checkout */ "./resources/js/components/_checkout.js");
+/* harmony import */ var _forms_Checkout__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/Checkout */ "./resources/js/components/forms/Checkout.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -23283,6 +23284,7 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -23361,6 +23363,7 @@ var Application = /*#__PURE__*/function () {
         _this2.addToFavorites();
         _this2.loadMore();
         var form = new _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__["default"]('.form-js');
+        var checkout = new _forms_Checkout__WEBPACK_IMPORTED_MODULE_16__.Checkout();
         var slick = new _plugins_Slick__WEBPACK_IMPORTED_MODULE_10__["default"]();
         slick.gallerySliderRefresh();
       });
@@ -23530,6 +23533,93 @@ var removeTicketRow = function removeTicketRow() {
 
 /***/ }),
 
+/***/ "./resources/js/components/forms/Checkout.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/forms/Checkout.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Checkout: () => (/* binding */ Checkout)
+/* harmony export */ });
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/_helpers */ "./resources/js/components/utils/_helpers.js");
+/* harmony import */ var _plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../plugins/_selectric-init */ "./resources/js/plugins/_selectric-init.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+var Checkout = /*#__PURE__*/function () {
+  function Checkout() {
+    _classCallCheck(this, Checkout);
+    this.$document = $(document);
+    this.initialize();
+    this.selectInit();
+  }
+  return _createClass(Checkout, [{
+    key: "initialize",
+    value: function initialize() {}
+  }, {
+    key: "selectInit",
+    value: function selectInit() {
+      var t = this;
+      this.$document.on('change', '.select-zone-js', function () {
+        var $t = $(this);
+        var $ticket = $t.closest('.checkout-ticket');
+        var $priceSelector = $ticket.find('.checkout-ticket-price');
+        var $placeWrapperSelector = $ticket.find('.select-place-wrapper');
+        var $placeSelect = $ticket.find('.select-place-js');
+        var $option = $t.find('option:selected');
+        var val = $t.val();
+        var qnt = $option.attr('data-qnt') || 0;
+        var price = $option.attr('data-price') || 0;
+        var eventID = $ticket.attr('data-event-id') || 0;
+        qnt = Number(qnt);
+        price = Number(price);
+        $ticket.attr('data-price', price);
+        $priceSelector.attr('data-price', price);
+        $priceSelector.text(price + ' ' + currencySymbol);
+        if (qnt) {
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+          $.ajax({
+            type: 'post',
+            url: adminAjax,
+            data: {
+              'action': 'get_place_options_html',
+              'zone_name': val,
+              'event_id': eventID,
+              'selected_places': t.getSelectedPlaces(val)
+            }
+          }).done(function (response) {
+            if (response) {
+              $placeWrapperSelector.removeClass('not-active');
+              $placeSelect.html(response);
+              $placeSelect.selectric('destroy');
+              $placeSelect.removeClass('selectric-init');
+              (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__.selectrickInit)();
+            } else {
+              $placeWrapperSelector.addClass('not-active');
+              $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
+            }
+            (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+          });
+        }
+      });
+    }
+  }, {
+    key: "getSelectedPlaces",
+    value: function getSelectedPlaces(zoneName) {}
+  }]);
+}();
+
+/***/ }),
+
 /***/ "./resources/js/components/forms/FormHandler.js":
 /*!******************************************************!*\
   !*** ./resources/js/components/forms/FormHandler.js ***!
@@ -23630,6 +23720,26 @@ var FormHandler = /*#__PURE__*/function () {
         }
         $password.removeClass('error');
         $passwordRepeat.removeClass('error');
+      }
+      var $password_new = $form.find('input[name="password_new"]');
+      var $password_repeat_new = $form.find('input[name="password_repeat_new"]');
+      if ($password.length > 0 && $password_new.length > 0 && $password.val().trim().length > 0) {
+        if ($password_new.val().trim() === '') {
+          $password_new.addClass('error');
+          return false;
+        }
+        if ($password_new.val() !== $password_repeat_new.val()) {
+          $password_repeat_new.addClass('error');
+          $password_new.addClass('error');
+          return;
+        }
+        if (!passwordRegex.test($password_new.val())) {
+          this.showMessage(passwordErrorString);
+          return false;
+        }
+        $password_new.removeClass('error');
+        $password.removeClass('error');
+        $password_repeat_new.removeClass('error');
       }
 
       // Validate inputs and textareas

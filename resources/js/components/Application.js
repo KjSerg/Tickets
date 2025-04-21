@@ -22,6 +22,7 @@ import {copyLink} from "./ui/_copy-link";
 import {flatpickrInit} from "../plugins/_flatpickr-init";
 import {tips} from "./ui/_tips";
 import {addTicketRow, removeTicketRow} from "./_checkout";
+import {Checkout} from "./forms/Checkout";
 
 export default class Application {
     constructor() {
@@ -84,6 +85,7 @@ export default class Application {
             this.addToFavorites();
             this.loadMore();
             const form = new FormHandler('.form-js');
+            const checkout = new Checkout();
             const slick = new Slick();
             slick.gallerySliderRefresh();
         });
@@ -171,6 +173,7 @@ export default class Application {
             });
         });
     }
+
     loadMore() {
         let load = false;
         const parser = new DOMParser();

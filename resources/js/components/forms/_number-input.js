@@ -1,4 +1,3 @@
-
 export const initTelMask = () => {
     const inputs = document.querySelectorAll("input[type='tel']");
 
@@ -29,7 +28,6 @@ export const initTelMask = () => {
         });
     });
 };
-
 
 export const numberInput = () => {
     const $doc = $(document);
