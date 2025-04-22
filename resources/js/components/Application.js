@@ -21,7 +21,6 @@ import {catalogFilterInit} from "./forms/_catalog-filter";
 import {copyLink} from "./ui/_copy-link";
 import {flatpickrInit} from "../plugins/_flatpickr-init";
 import {tips} from "./ui/_tips";
-import {addTicketRow, removeTicketRow} from "./_checkout";
 import {Checkout} from "./forms/Checkout";
 
 export default class Application {
@@ -78,8 +77,6 @@ export default class Application {
             selectrickInit();
             tips();
             dropdownCustom();
-            addTicketRow();
-            removeTicketRow();
             this.showLoaderOnClick();
             this.linkListener();
             this.addToFavorites();

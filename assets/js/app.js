@@ -23275,8 +23275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_copy_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ui/_copy-link */ "./resources/js/components/ui/_copy-link.js");
 /* harmony import */ var _plugins_flatpickr_init__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../plugins/_flatpickr-init */ "./resources/js/plugins/_flatpickr-init.js");
 /* harmony import */ var _ui_tips__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ui/_tips */ "./resources/js/components/ui/_tips.js");
-/* harmony import */ var _checkout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_checkout */ "./resources/js/components/_checkout.js");
-/* harmony import */ var _forms_Checkout__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/Checkout */ "./resources/js/components/forms/Checkout.js");
+/* harmony import */ var _forms_Checkout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./forms/Checkout */ "./resources/js/components/forms/Checkout.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -23284,7 +23283,6 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-
 
 
 
@@ -23356,14 +23354,12 @@ var Application = /*#__PURE__*/function () {
         (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_6__.selectrickInit)();
         (0,_ui_tips__WEBPACK_IMPORTED_MODULE_14__.tips)();
         (0,_ui_togglers__WEBPACK_IMPORTED_MODULE_8__.dropdownCustom)();
-        (0,_checkout__WEBPACK_IMPORTED_MODULE_15__.addTicketRow)();
-        (0,_checkout__WEBPACK_IMPORTED_MODULE_15__.removeTicketRow)();
         _this2.showLoaderOnClick();
         _this2.linkListener();
         _this2.addToFavorites();
         _this2.loadMore();
         var form = new _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__["default"]('.form-js');
-        var checkout = new _forms_Checkout__WEBPACK_IMPORTED_MODULE_16__.Checkout();
+        var checkout = new _forms_Checkout__WEBPACK_IMPORTED_MODULE_15__.Checkout();
         var slick = new _plugins_Slick__WEBPACK_IMPORTED_MODULE_10__["default"]();
         slick.gallerySliderRefresh();
       });
@@ -23484,55 +23480,6 @@ var Application = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/components/_checkout.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/_checkout.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   addTicketRow: () => (/* binding */ addTicketRow),
-/* harmony export */   removeTicketRow: () => (/* binding */ removeTicketRow)
-/* harmony export */ });
-/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/_helpers */ "./resources/js/components/utils/_helpers.js");
-/* harmony import */ var _plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../plugins/_selectric-init */ "./resources/js/plugins/_selectric-init.js");
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-
-var addTicketRow = function addTicketRow() {
-  _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.checkout-ticket-add__button', function (e) {
-    e.preventDefault();
-    var $t = $(this);
-    var href = $t.attr('href');
-    if (href === undefined) return;
-    if (href === '#') return;
-    (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
-    $.ajax({
-      type: 'get',
-      url: href
-    }).done(function (response) {
-      if (response) {
-        $t.closest('.checkout-ticket-add').before(response);
-        (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__.selectrickInit)();
-      }
-      (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
-    });
-  });
-};
-var removeTicketRow = function removeTicketRow() {
-  _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.checkout-ticket-remove', function (e) {
-    e.preventDefault();
-    var $t = $(this);
-    var $rows = _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find('.checkout-ticket');
-    if ($rows.length <= 1) return;
-    $t.closest('.checkout-ticket').remove();
-  });
-};
-
-/***/ }),
-
 /***/ "./resources/js/components/forms/Checkout.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/forms/Checkout.js ***!
@@ -23546,6 +23493,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/_helpers */ "./resources/js/components/utils/_helpers.js");
 /* harmony import */ var _plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../plugins/_selectric-init */ "./resources/js/plugins/_selectric-init.js");
+/* harmony import */ var _catalog_filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_catalog-filter */ "./resources/js/components/forms/_catalog-filter.js");
+/* harmony import */ var _plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../plugins/_fancybox-init */ "./resources/js/plugins/_fancybox-init.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -23555,21 +23504,59 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
+
+
 var Checkout = /*#__PURE__*/function () {
   function Checkout() {
     _classCallCheck(this, Checkout);
-    this.$document = $(document);
+    this.$document = _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document;
     this.initialize();
     this.selectInit();
   }
   return _createClass(Checkout, [{
     key: "initialize",
-    value: function initialize() {}
+    value: function initialize() {
+      var t = this;
+      this.$document.on('change', 'input[name="delivery_method"]', function () {
+        t.setTotal();
+      });
+      this.$document.on('change', 'input[name="payment_method"]', function () {
+        t.setTotal();
+      });
+      _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.checkout-ticket-add__button', function (e) {
+        e.preventDefault();
+        var $t = $(this);
+        var href = $t.attr('href');
+        if (href === undefined) return;
+        if (href === '#') return;
+        (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+        $.ajax({
+          type: 'get',
+          url: href
+        }).done(function (response) {
+          if (response) {
+            $t.closest('.checkout-ticket-add').before(response);
+            (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__.selectrickInit)();
+          }
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+        });
+      });
+      _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.checkout-ticket-remove', function (e) {
+        e.preventDefault();
+        var $t = $(this);
+        var $rows = _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find('.checkout-ticket');
+        if ($rows.length <= 1) return;
+        $t.closest('.checkout-ticket').remove();
+        t.setTotal();
+      });
+      t.setTotal();
+      t.initPromo();
+    }
   }, {
     key: "selectInit",
     value: function selectInit() {
       var t = this;
-      this.$document.on('change', '.select-zone-js', function () {
+      t.$document.on('change', '.select-zone-js', function () {
         var $t = $(this);
         var $ticket = $t.closest('.checkout-ticket');
         var $priceSelector = $ticket.find('.checkout-ticket-price');
@@ -23585,7 +23572,9 @@ var Checkout = /*#__PURE__*/function () {
         $ticket.attr('data-price', price);
         $priceSelector.attr('data-price', price);
         $priceSelector.text(price + ' ' + currencySymbol);
+        t.setTotal();
         if (qnt) {
+          $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
           (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
           $.ajax({
             type: 'post',
@@ -23611,10 +23600,129 @@ var Checkout = /*#__PURE__*/function () {
           });
         }
       });
+      t.$document.on('change', '.select-place-js', function () {
+        var $t = $(this);
+        var val = $t.val();
+        var $_ticket = $t.closest('.checkout-ticket');
+        var $zoneSelect = $_ticket.find('.select-zone-js');
+        var zone = $zoneSelect.val();
+        t.$document.find('.checkout-ticket').not($_ticket).each(function () {
+          var $ticket = $(this);
+          var $zone = $ticket.find('.select-zone-js');
+          if ($zone.val() === zone) {
+            var $place = $ticket.find('.select-place-js');
+            if ($place.val() === val) {
+              $ticket.find('.checkout-ticket-remove').trigger('click');
+            }
+          }
+        });
+      });
+    }
+  }, {
+    key: "getTicketPrices",
+    value: function getTicketPrices() {
+      var subSum = 0;
+      this.$document.find('.checkout-ticket').each(function () {
+        var $ticket = $(this);
+        var $zone = $ticket.find('.select-zone-js');
+        if ($zone.val()) {
+          var $option = $zone.find('option:selected');
+          var price = $option.attr('data-price') || 0;
+          price = Number(price);
+          subSum = subSum + price;
+        }
+      });
+      return subSum;
+    }
+  }, {
+    key: "getShippingPrice",
+    value: function getShippingPrice() {
+      var $selected = this.$document.find('input[name="delivery_method"]:checked');
+      var price = $selected.attr('data-price') || 0;
+      return Number(price);
+    }
+  }, {
+    key: "getPaymentPrice",
+    value: function getPaymentPrice() {
+      var $selected = this.$document.find('input[name="payment_method"]:checked');
+      var price = $selected.attr('data-price') || 0;
+      return Number(price);
+    }
+  }, {
+    key: "setTotal",
+    value: function setTotal() {
+      var t = this;
+      var tickets = t.getTicketPrices();
+      var payment = t.getPaymentPrice();
+      var delivery = t.getShippingPrice();
+      var total = tickets + payment + delivery + (serviceFees || 0);
+      t.$document.find('.tickets-price').text(tickets.toFixed(2) + ' ' + currencySymbol);
+      t.$document.find('.delivery-price').text(delivery.toFixed(2) + ' ' + currencySymbol);
+      t.$document.find('.payment-price').text(payment.toFixed(2) + ' ' + currencySymbol);
+      t.$document.find('.total-price').text(total.toFixed(2) + ' ' + currencySymbol);
+      var discount = localStorage.getItem('discountValue');
+      if (!discount) return;
+      discount = Number(discount);
+      if (isNaN(discount) || discount === 0) return;
+      total = total - discount;
+      t.$document.find('.total-price').text(total.toFixed(2) + ' ' + currencySymbol);
+      t.$document.find('.promo-code-js').val(localStorage.getItem('discountTitle'));
     }
   }, {
     key: "getSelectedPlaces",
-    value: function getSelectedPlaces(zoneName) {}
+    value: function getSelectedPlaces() {
+      var zoneName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var res = [];
+      this.$document.find('.checkout-ticket').each(function () {
+        var $ticket = $(this);
+        var $zone = $ticket.find('.select-zone-js');
+        if ($zone.val() === zoneName) {
+          var $place = $ticket.find('.select-place-js');
+          if ($place.val()) res.push($place.val());
+        }
+      });
+      return res.join(',');
+    }
+  }, {
+    key: "initPromo",
+    value: function initPromo() {
+      var t = this;
+      _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.on('click', '.checkout-promo__button', function (e) {
+        e.preventDefault();
+        var $t = $(this);
+        var $input = _utils_helpers__WEBPACK_IMPORTED_MODULE_0__.$document.find('.promo-code-js');
+        if ($input.val().trim().length === 0) {
+          $input.addClass('error');
+          return;
+        }
+        $input.removeClass('error');
+        (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+        $.ajax({
+          type: 'post',
+          url: adminAjax,
+          data: {
+            'action': 'set_promo_code',
+            'promo_code': $input.val(),
+            'event_id': $input.attr('data-event-id')
+          }
+        }).done(function (response) {
+          if (response) {
+            if ((0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.isJsonString)(response)) {
+              var data = JSON.parse(response);
+              var discount = data.discount || 0;
+              var msg = data.msg || '';
+              if (msg) (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_3__.showMsg)(msg);
+              localStorage.setItem('discountValue', discount);
+              localStorage.setItem('discountTitle', $input.val());
+              t.setTotal();
+            } else {
+              (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_3__.showMsg)(response);
+            }
+          }
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+        });
+      });
+    }
   }]);
 }();
 
