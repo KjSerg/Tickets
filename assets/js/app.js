@@ -23573,32 +23573,38 @@ var Checkout = /*#__PURE__*/function () {
         $priceSelector.attr('data-price', price);
         $priceSelector.text(price + ' ' + currencySymbol);
         t.setTotal();
-        if (qnt) {
-          $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
-          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
-          $.ajax({
-            type: 'post',
-            url: adminAjax,
-            data: {
-              'action': 'get_place_options_html',
-              'zone_name': val,
-              'event_id': eventID,
-              'selected_places': t.getSelectedPlaces(val)
-            }
-          }).done(function (response) {
-            if (response) {
-              $placeWrapperSelector.removeClass('not-active');
-              $placeSelect.html(response);
+        $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
+        (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.showPreloader)();
+        $.ajax({
+          type: 'post',
+          url: adminAjax,
+          data: {
+            'action': 'get_place_options_html',
+            'zone_name': val,
+            'event_id': eventID,
+            'selected_places': t.getSelectedPlaces(val)
+          }
+        }).done(function (response) {
+          if (response) {
+            $placeWrapperSelector.removeClass('not-active');
+            $placeSelect.html(response);
+            if ($placeSelect.find('option').length > 1) {
+              $placeSelect.attr('required', 'required');
               $placeSelect.selectric('destroy');
               $placeSelect.removeClass('selectric-init');
               (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_1__.selectrickInit)();
             } else {
+              $placeSelect.removeAttr('required');
               $placeWrapperSelector.addClass('not-active');
+              $placeWrapperSelector.removeClass('error');
               $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
             }
-            (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
-          });
-        }
+          } else {
+            $placeWrapperSelector.addClass('not-active');
+            $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
+          }
+          (0,_utils_helpers__WEBPACK_IMPORTED_MODULE_0__.hidePreloader)();
+        });
       });
       t.$document.on('change', '.select-place-js', function () {
         var $t = $(this);
@@ -23606,6 +23612,8 @@ var Checkout = /*#__PURE__*/function () {
         var $_ticket = $t.closest('.checkout-ticket');
         var $zoneSelect = $_ticket.find('.select-zone-js');
         var zone = $zoneSelect.val();
+        console.log(val);
+        if (val === 'false') return;
         t.$document.find('.checkout-ticket').not($_ticket).each(function () {
           var $ticket = $(this);
           var $zone = $ticket.find('.select-zone-js');

@@ -67,32 +67,40 @@ export class Checkout {
             $priceSelector.attr('data-price', price);
             $priceSelector.text(price + ' ' + currencySymbol);
             t.setTotal();
-            if (qnt) {
-                $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
-                showPreloader();
-                $.ajax({
-                    type: 'post',
-                    url: adminAjax,
-                    data: {
-                        'action': 'get_place_options_html',
-                        'zone_name': val,
-                        'event_id': eventID,
-                        'selected_places': t.getSelectedPlaces(val),
-                    }
-                }).done((response) => {
-                    if (response) {
-                        $placeWrapperSelector.removeClass('not-active');
-                        $placeSelect.html(response);
+            $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
+            showPreloader();
+            $.ajax({
+                type: 'post',
+                url: adminAjax,
+                data: {
+                    'action': 'get_place_options_html',
+                    'zone_name': val,
+                    'event_id': eventID,
+                    'selected_places': t.getSelectedPlaces(val),
+                }
+            }).done((response) => {
+                if (response) {
+                    $placeWrapperSelector.removeClass('not-active');
+                    $placeSelect.html(response);
+                    if($placeSelect.find('option').length > 1){
+                        $placeSelect.attr('required', 'required');
                         $placeSelect.selectric('destroy');
                         $placeSelect.removeClass('selectric-init');
                         selectrickInit();
-                    } else {
+                    }else {
+                        $placeSelect.removeAttr('required');
                         $placeWrapperSelector.addClass('not-active');
+                        $placeWrapperSelector.removeClass('error');
                         $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
                     }
-                    hidePreloader();
-                });
-            }
+
+
+                } else {
+                    $placeWrapperSelector.addClass('not-active');
+                    $placeSelect.prop('selectedIndex', 0).selectric('refresh').change();
+                }
+                hidePreloader();
+            });
         });
         t.$document.on('change', '.select-place-js', function () {
             const $t = $(this);
@@ -100,6 +108,8 @@ export class Checkout {
             const $_ticket = $t.closest('.checkout-ticket');
             const $zoneSelect = $_ticket.find('.select-zone-js');
             const zone = $zoneSelect.val();
+            console.log(val)
+            if(val === 'false') return;
             t.$document.find('.checkout-ticket').not($_ticket).each(function () {
                 const $ticket = $(this);
                 const $zone = $ticket.find('.select-zone-js');
