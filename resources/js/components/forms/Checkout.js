@@ -219,5 +219,6 @@ export class Checkout {
                 hidePreloader();
             });
         });
+
     }
 }

@@ -23811,6 +23811,11 @@ var FormHandler = /*#__PURE__*/function () {
         contentType: false,
         data: formData
       });
+      if ($form.hasClass('checkout-form')) {
+        localStorage.removeItem('discountValue');
+        localStorage.removeItem('discountTitle');
+        $form.addClass('not-active');
+      }
       if (!$form.hasClass('no-reset')) $form.trigger('reset');
     }
   }, {
