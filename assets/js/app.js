@@ -24009,6 +24009,7 @@ var FormHandler = /*#__PURE__*/function () {
         $.fancybox.open(message);
         setTimeout(function () {
           $.fancybox.close();
+          if (url) window.location.href = url;
         }, 3000);
         return;
       }
@@ -24017,6 +24018,7 @@ var FormHandler = /*#__PURE__*/function () {
       $.fancybox.open($modal);
       setTimeout(function () {
         $.fancybox.close();
+        if (url) window.location.href = url;
       }, 3000);
     }
   }, {
@@ -24311,6 +24313,7 @@ var accordion = function accordion() {
     var $section = $element.closest('section');
     $section = $section.length === 0 ? $element.closest('footer') : $section;
     $section = $section.length === 0 ? $element.closest('header') : $section;
+    $section = $section.length === 0 ? $element.closest('.custom-dropdown') : $section;
     var isShowed = $element.hasClass('active');
     $section.find('.accordion').not($element).find('.accordion-content').slideUp();
     $section.find('.accordion').not($element).removeClass('active');
@@ -24319,7 +24322,18 @@ var accordion = function accordion() {
       $content.slideUp(200);
     } else {
       $element.addClass('active');
-      $content.slideDown(200);
+      $content.slideDown(200, function () {
+        if ($section.hasClass('custom-dropdown')) {
+          var element = document.querySelector('#tips-list');
+          setTimeout(function () {
+            var newScrollTop = element.scrollTop + 40;
+            element.scrollTo({
+              top: newScrollTop,
+              behavior: 'smooth'
+            });
+          }, 0);
+        }
+      });
     }
   });
 };
@@ -24550,6 +24564,7 @@ var toggler = function toggler() {
 };
 var dropdownCustom = function dropdownCustom() {
   var $doc = $(document);
+  setLocationDropdownHeight();
   $doc.on('click', '.dropdown-trigger', function (e) {
     e.preventDefault();
     var $t = $(this);
@@ -24590,6 +24605,21 @@ var dropdownCustom = function dropdownCustom() {
     }
   });
   $(window).on('resize', closeDropdowns);
+};
+var setLocationDropdownHeight = function setLocationDropdownHeight() {
+  var $list = $(document).find('#tips-list');
+  var $dropdown = $(document).find('#location-dropdown');
+  var $dropdownSearch = $dropdown.find('.location-dropdown-search');
+  var styles = window.getComputedStyle($dropdownSearch[0]);
+  var height = parseFloat(styles.height);
+  var marginTop = parseFloat(styles.marginTop);
+  var marginBottom = parseFloat(styles.marginBottom);
+  var totalHeight = height + marginTop + marginBottom;
+  $list.css('max-height', 'none');
+  var listHeight = $list.height() + 10;
+  $list.css('max-height', listHeight + 'px');
+  var dropdownHeight = listHeight + totalHeight;
+  $dropdown.css('max-height', dropdownHeight + 'px');
 };
 var closeDropdowns = function closeDropdowns() {
   var cls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'active';

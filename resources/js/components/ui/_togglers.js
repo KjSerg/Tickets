@@ -30,9 +30,9 @@ export const toggler = () => {
         const $t = $(this);
         const isActive = $t.prop('checked') === true;
         const $container = $t.closest('.checkout-promo').find('.checkout-promo-container');
-        if(isActive){
+        if (isActive) {
             $container.slideDown();
-        }else {
+        } else {
             $container.slideUp();
         }
     });
@@ -40,6 +40,7 @@ export const toggler = () => {
 }
 export const dropdownCustom = () => {
     const $doc = $(document);
+    setLocationDropdownHeight();
     $doc.on('click', '.dropdown-trigger', function (e) {
         e.preventDefault();
         const $t = $(this);
@@ -49,7 +50,6 @@ export const dropdownCustom = () => {
         if (href === undefined) return;
         const $elem = $doc.find(href);
         if ($elem.length === 0) return;
-
         if (isActive) {
             $t.removeClass('active');
             $elem.removeClass(cls);
@@ -63,7 +63,6 @@ export const dropdownCustom = () => {
             const triggerWidth = $t.outerWidth();
             const elW = $elem.outerWidth();
             const elH = $elem.outerHeight();
-
             const topPosition = triggerPositionTop + triggerHeight + 10;
             let position = {
                 'left': triggerPositionLeft,
@@ -84,6 +83,22 @@ export const dropdownCustom = () => {
         }
     });
     $(window).on('resize', closeDropdowns);
+}
+
+const setLocationDropdownHeight = () => {
+    const $list = $(document).find('#tips-list');
+    const $dropdown = $(document).find('#location-dropdown');
+    const $dropdownSearch = $dropdown.find('.location-dropdown-search');
+    const styles = window.getComputedStyle($dropdownSearch[0]);
+    const height = parseFloat(styles.height);
+    const marginTop = parseFloat(styles.marginTop);
+    const marginBottom = parseFloat(styles.marginBottom);
+    const totalHeight = height + marginTop + marginBottom;
+    $list.css('max-height', 'none');
+    const listHeight = $list.height() + 10;
+    $list.css('max-height', listHeight + 'px');
+    const dropdownHeight = listHeight + totalHeight;
+    $dropdown.css('max-height', dropdownHeight + 'px');
 }
 
 export const closeDropdowns = (cls = 'active') => {

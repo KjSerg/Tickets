@@ -7,6 +7,7 @@ export const accordion = () => {
         let $section = $element.closest('section');
         $section = $section.length === 0 ? $element.closest('footer') : $section;
         $section = $section.length === 0 ? $element.closest('header') : $section;
+        $section = $section.length === 0 ? $element.closest('.custom-dropdown') : $section;
         const isShowed = $element.hasClass('active');
         $section.find('.accordion').not($element).find('.accordion-content').slideUp();
         $section.find('.accordion').not($element).removeClass('active');
@@ -15,7 +16,19 @@ export const accordion = () => {
             $content.slideUp(200);
         } else {
             $element.addClass('active');
-            $content.slideDown(200);
+            $content.slideDown(200, function () {
+                if ($section.hasClass('custom-dropdown')) {
+                    const element = document.querySelector('#tips-list');
+                    setTimeout(() => {
+                        let newScrollTop = element.scrollTop + 40;
+                        element.scrollTo({
+                            top: newScrollTop,
+                            behavior: 'smooth'
+                        });
+                    }, 0);
+                }
+            });
+
         }
     });
 }

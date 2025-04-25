@@ -246,7 +246,8 @@ export default class FormHandler {
         if ($modal.length === 0) {
             $.fancybox.open(message);
             setTimeout(function () {
-                $.fancybox.close()
+                $.fancybox.close();
+                if(url) window.location.href = url;
             }, 3000)
 
             return;
@@ -257,7 +258,8 @@ export default class FormHandler {
 
         $.fancybox.open($modal);
         setTimeout(function () {
-            $.fancybox.close()
+            $.fancybox.close();
+            if(url) window.location.href = url;
         }, 3000)
     }
 
